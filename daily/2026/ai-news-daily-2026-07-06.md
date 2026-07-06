@@ -1,7 +1,7 @@
 # AI News Daily Summary — 2026-07-06
 
 > 本サマリーは 01_ai-news-Master・02_ai-news-Copilot・03_ai-news-industry の3ソース（7/6分）を統合して作成。
-> ※ 01_ai-news-Master は当日分（7/6）が未取得（未公開）のため、2ソース（02_Copilot・03_industry）で作成。
+> ※ 当初 01_ai-news-Master の当日分（7/6）が未取得だったが、7/7 に取得可能となったため3ソースで再生成（欠損リカバリ）。
 
 月曜。**新規のフロンティアモデル・一次情報の動きは乏しい静かな1日**だが、明日 7/7 が節目集中日。GPT-5.6 の広域GA（予測市場が7/7を約74%で織り込み）、Anthropic Fable 5 の usage credits 移行、Copilot Studio 次ビルドが重なる。
 
@@ -58,6 +58,9 @@
 - **Claude Code**: v2.1.201 が最新のまま（7/3〜7/6 新版なし）
 - **競争構図**: Anthropic 売上ラン・レート $30B 超で自己申告売上ベース逆転（7/4既往）から新規なし
 
+### OpenAI / ChatGPT
+- **ChatGPT 新ディクテーション（音声→テキスト）モデルを全プラン展開**: 多言語混在・言語スイッチ・騒がしい環境・小声/ささやき・英数字混在の書き起こし精度を改善。併せて ChatGPT Business に **plugin 管理者統制**（discovery/policy/install の一元管理、状態・ロール・カテゴリでの絞り込み）、Remote Control の **1対1 認証付き QR ペアリング**を追加。 https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+
 ### Microsoft / Copilot Studio
 - **Copilot Studio - What's New**: June 2026 セクションのまま、7月項目なし（Learn MCP で一次確認）。新エージェント体験（Production-ready Preview）／Microsoft IQ／Skills／Memory
 - **Copilot Studio 基盤（Released Versions）**: 最新は Build 2026.6.3（6/30初出）で変化なし。版ページは火曜更新のため**次ビルドは 7/7 見込み**
@@ -66,7 +69,9 @@
 
 ### 開発ツール
 - **GitHub Models 全面廃止（7/30）**（ハイライト参照）
-- **GitHub Copilot**: 7/2 changelog（CLI が Actions で PAT 不要、エージェントセッションストリーミング Public Preview 等）が最新。7/3〜7/6 新規なし
+- **GitHub Copilot CLI**: pre-release v1.0.69-1（7/4）で接続中 MCP サーバ・ステータスの一覧表示、ターン途中での設定変更に対応。安定版は v1.0.68（7/1）のまま
+- **OpenAI Codex CLI**: pre-release 0.143.0-alpha.36（7/5）。alpha は日次で刻まれ機能追加は小粒。安定版は 0.142.5（7/1）のまま
+- **GitHub Copilot（本体）**: 7/2 changelog（CLI が Actions で PAT 不要、エージェントセッションストリーミング Public Preview 等）が最新。7/3〜7/6 新規なし
 - **Cursor**: 3.9（Customize ページ＝プラグイン/スキル/MCP/サブエージェント一元管理・6/22）と iOS 公開ベータ（6/29）が最新。7/3〜7/6 新規なし
 - **Devin**: Security Swarm（7/1）が最新。Devin Desktop（旧 Windsurf）は既報。7/3〜7/6 新規なし
 
@@ -87,6 +92,7 @@
 
 ## 改善メモ
 
-- **01_ai-news-Master が当日分（7/6）未取得**: 本サマリーは 02_Copilot・03_industry の2ソースで作成。Master の更新（毎朝4:00 JST目安）が遅延または未公開の可能性。翌日の統合時に7/6分の取りこぼしがないか要確認。
-- **RSS/WebFetch 全ソース403継続**（03_industry）: WebSearch で収集。取得方法の WebSearch 優先化提案（B-004）が7回目の継続。
+- **欠損リカバリ実施**: 当初未取得だった 01_ai-news-Master の 7/6 分が 7/7 に取得可能となり、本サマリーを3ソースで再生成・上書きした。追加された主な内容は ChatGPT 新ディクテーションモデル・Copilot CLI / Codex CLI の小刻み更新。Master 側ルーチンの遅延は解消済み。
+- **取得方法の確定（B-006）**: 01_Master 側で宿題ソース `platform.claude.com`（Fable 5/Mythos 5 ドキュメント）の WebFetch 疎通を確認し、取得方法欄をプライマリに確定。
+- **RSS/WebFetch 全ソース403継続**（03_industry）: WebSearch で収集。取得方法の WebSearch 優先化提案（B-004）が7回目の継続。主要ソース一括403は月曜復旧チェック（B-001）でも継続を確認。
 - ソース間で 7/7 の Fable 5 usage credits 移行・GPT-5.6 GA・Copilot Studio 次ビルドの記述が一致。矛盾は検出されず。
