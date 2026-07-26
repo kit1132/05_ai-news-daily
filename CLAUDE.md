@@ -10,7 +10,7 @@
 
 - `daily/YYYY/ai-news-daily-YYYY-MM-DD.md` — 日次サマリー本体
 - `.claude/commands/daily-summary.md` — **生成手順の正本**（ルーチンはこのファイルに従う）
-- `index.html` — ダイジェストの HTML ビューア（marked.js 使用、GitHub Pages で公開）
+- `index.html` — 統合ビューア（https://kit1132.github.io/01_ai-news-Master/ ）へのリダイレクト。実体は 01_ai-news-Master/index.html にある。**このファイルは編集不要**
 - `files.json` — ビューアが参照するファイル一覧（新しい順、パスはルートからの相対）
 - `.nojekyll` — GitHub Pages の Jekyll 処理を無効化
 

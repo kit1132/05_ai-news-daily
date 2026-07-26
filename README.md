@@ -4,7 +4,7 @@
 
 - 出力: `daily/YYYY/ai-news-daily-YYYY-MM-DD.md`
 - 生成手順の正本: `.claude/commands/daily-summary.md`
-- ビューア: GitHub Pages（`index.html` + `files.json`）
+- ビューア: [統合ビューア](https://kit1132.github.io/01_ai-news-Master/#daily)（実体は 01_ai-news-Master/index.html。このリポの `index.html` はそこへのリダイレクト）
 - 週次集約は [04_ai-news-weekly](https://github.com/kit1132/04_ai-news-weekly) が担当
 
 `daily/2026/` の 2026-04-05〜2026-06-12 分は、ローカル（Cowork / ルーチン）時代に生成した2ソース版アーカイブ。3ソース統合版は 2026-06-13 以降。
