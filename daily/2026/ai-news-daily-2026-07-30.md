@@ -1,8 +1,8 @@
 # AI News Daily Summary — 2026-07-30
 
-> 本サマリーは 01_ai-news-Master・03_ai-news-industry の2ソース（7/30分）を統合して作成。※ 02_ai-news-Copilot は当日分が未取得のため 2 ソースで作成。
+> 本サマリーは 01_ai-news-Master・02_ai-news-Copilot・03_ai-news-industry の3ソース（7/30分）を統合して作成。※ 当初は 02_ai-news-Copilot が未取得のため2ソースで作成したが、07-31 の欠損リカバリで3ソース統合に再生成した。
 
-木曜の主題は3つ。7/28 に確定した MCP 新仕様が Claude 製品側に降りて社内ネットワークへのトンネル接続が開き、Microsoft と Meta の決算が同日に出て M365 Copilot の有料シートが3,000万に達したことが明らかになり、Anthropic の未公開モデルがポスト量子署名の新規攻撃を60時間で見つけたと公表された。
+木曜の主題は3つ。7/28 に確定した MCP 新仕様が Claude 製品側に降りて社内ネットワークへのトンネル接続が開き、Microsoft と Meta の決算が同日に出て M365 Copilot の有料シートが3,000万に達したことが明らかになり、Anthropic の未公開モデルがポスト量子署名の新規攻撃を60時間で見つけたと公表された。Microsoft 側では Copilot Studio の「エージェント提案」が同日 GA になり、エージェントの起案が利用ログ起点に変わり始めた。
 
 ## 今日のハイライト
 
@@ -80,8 +80,29 @@
 - **Gemini 3.5 Pro** — Google は 7/30 時点も 3.5 Pro を Vertex AI の限定エンタープライズプレビューに留めており、GA させていない。公式表明は 7/21 の「パートナーとテスト中」で日付を伴わず、5/19 の I/O 告知・6月末・7/17 の各目標をいずれも逸失して3度目の期日超過となった。公開 API の GA 済みフラッグシップは Gemini 3.1 Pro のままで、価格もコンテキスト長も未確定。Polymarket は 7/31 を約81%と見込む。
   https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/
 
+### Copilot Studio / Power Platform
+
+- **エージェント提案の GA** — Copilot Studio の利用者が、新規エージェント作成時に M365 Copilot のメモリと過去の利用履歴から生成された提案を最大3件受け取れるようになった（GA 日は **2026-07-30**）。提案は Agent Builder のテンプレート一覧に「パーソナライズされた推奨」として既存テンプレートと区別して並び、作業パターンの変化に応じて定期更新され、新着時にメール通知が飛ぶ。公開前に内容を確認・修正でき、公開後の挙動は他のエージェントと変わらない。前提として対象環境で M365 Copilot メモリが有効になっている必要があり、未有効のテナントでは提案が一切出ないため、研修やハンズオンでは当日の環境確認項目に入れないと空振りする。一次ページは当日 WebFetch 403 で取得できず、記載は二次ソースに依拠している。
+  https://m365admin.handsontek.net/microsoft-copilot-studio-get-microsoft-365-copilot-agent-suggestions-based-work-copilot-studio/
+- **Foundry IQ 接続（Preview）** — 開発者が、Azure AI Foundry で構築・チューニング済みのナレッジベースを作り直さずに、Copilot Studio エージェントの Microsoft IQ ソースとして参照できる。認証は API キー / クライアント証明書 / サービスプリンシパル / Entra ID 統合の4方式に対応し、接続は1エージェントにつき1つまでに限られる。retrieval の結果が期待と違う場合の調整は Copilot Studio 側ではなく Foundry 側で行う建付けなので、AI 検索を別チームが持つ案件では担当分界をそのまま製品構成に写せる。
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/foundry-iq-connect
+- **Teams Phone Agent 連携（Preview）** — 管理者が、Teams 管理センターでダイヤルキーの宛先に Copilot Studio の音声エージェントを割り当て、請求・処方箋補充・注文状況といった専用フローを担当させられる。ただし制約が重く、対象は basic voice agent のみ（real-time voice agent は非対応で、音声タイプの変更は不可逆）、オーケストレーションは classic 必須（generative は 5〜6 秒の遅延が出る）、認証は「認証なし」必須、テナントは Microsoft サポート経由の個別有効化が要る。**日本**・France・Germany・India・South Africa は音声エージェント非対応リージョンなので、日本リージョン前提の案件で「音声は Copilot Studio で作れます」と言い切ると要件確認で必ず戻る。
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-teams-phone-agent
+- **条件グループ** — 作成者が、Message / Question / prompt ノードの複数条件を1ノードに集約し、テーブル表示とグラフ表示を切り替えられるようになった。既存の条件ノードの挙動は変わらず、コードエディターで条件グループ ID に `_tv` を付けるとテーブル表示に切り替わる。トピックの見通しが良くなるため、研修教材のフロー例を書き換える候補になる。
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-condition-groups
+- **Microsoft 一次は据え置き** — Copilot 側の定例ソースは 7/30 時点でいずれも動いていない。M365 Copilot Release Notes は「July 15, 2026」が最新のままで 7/29 見込みの次バッチが出ておらず（次は 8/5 前後の見込み）、Copilot Studio の基盤ビルドは 2026.6.3（6/30 初出）に据え置かれて7月中の新ビルドがゼロの状態が5週続いている。M365 Roadmap の最新アナウンスも 7/9 の GPT-5.6 のままである。
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new
+
 ### 運用 / エンタープライズ
 
+- **Purview DLP × Entra Global Secure Access（Preview）** — 管理者が、ネットワーク層でテキストと AI 対話を傍受・検査し、DLP ポリシーに基づく制限アクションを適用できるようになる。ブラウザー・アプリ・API・アドインを経由した生成 AI プラットフォームや SNS への機密データ送信を抑止する用途で、Insider Risk Management 側のリスク検知にも連動する。エンドポイント側の対策を入れずに「どの経路で出て行くか」を統制できるため、シャドー AI の相談に対する回答の選択肢が増える。
+  https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn
+- **Cowork のモデル統制** — 管理者が、M365 admin center の Copilot 設定で Anthropic モデルファミリーを一括オフにできる。既定オフの **Claude Fable 5（Preview）** は明示的に有効化するまでモデルピッカーに出ない。Fable 5 はデータ保持が必要なモデルで、選択するとプロンプトと応答がモデルプロバイダー側に保持され、ピッカーの注記と選択中のバナーでその旨が表示される。Cowork の既定は no-retention なので、ここだけ扱いが異なる点を情報システム部門への説明に含める必要がある。
+  https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-models
+- **Cowork のブラウザー利用統制** — 管理者が、テナント設定 Cowork Browsing でブラウザー操作の可否を切り替えられる。ブラウザータスクはユーザー端末の Edge で動くため既存の条件付きアクセス・DLP・閲覧ポリシー（allowlist / blocklist / 閲覧のみ）をそのまま継承し、Cowork が開始した各タスクは統合監査ログに記録される。課金は使用量ベースで、モデル応答・ツールとスキルの呼び出し・画像生成・ブラウザータスクがいずれも消費対象になる。
+  https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-admin-governance
+- **Cowork のモデル構成** — 利用者が、Auto（既定）/ Claude Sonnet 5 / Claude Opus 4.8 / GPT 5.5（Frontier・Azure AI Foundry ホスト）/ Claude Fable 5（Preview）/ **Sonnet + Opus Advisor** から選べる。Advisor は Sonnet が本番ターンを処理し Opus が精度と網羅性をレビューする2段構えのモードで、会話を2つ管理せずに重要な成果物へ二次チェックを掛けたい場合に使う。画像生成は Imagen 2 が担当する。
+  https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-models
 - **Coding Agent Insights** — AWS が、コーディングエージェントの利用状況を可視化する CloudWatch の機能を提供開始した（7/20・当サマリー未掲載分）。Claude apps gateway 経由なら Claude Code のテレメトリを追加計装なしに収集でき、Codex と GitHub Copilot も対象に含む。OpenTelemetry メトリクスを土台に、トークン消費・ターンごとのレイテンシ・ツール呼び出し・API リクエストと承認を、既存の CloudWatch 運用データと並べて見られる。中東（UAE / バーレーン）とイスラエル（テルアビブ）を除く全 AWS 商用リージョンで使える。エージェント導入の効果測定とトークン予算の配分根拠を、ベンダー横断で1か所に寄せられる点が実務上大きい。
   https://aws.amazon.com/about-aws/whats-new/2026/07/cloudwatch-coding-agent-insights/
   https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/coding-agents-claude-code-gateway.html
@@ -105,26 +126,31 @@
 ## 直近の注目予定
 
 - 7/30（本日）: GitHub Models 全廃（playground / カタログ / 推論 API / BYOK） ／ Apple・Amazon 決算（米国時間）
-- 7/31: Copilot から Gemini 2.5 Pro・Gemini 3 Flash 廃止 ／ Devin classic 環境設定 read-only 参照終了 ／ Polymarket が Gemini 3.5 Pro 発表を約81%と見込む節目
-- 8/1: covered frontier model 60日 EO 期限
+- 7/31: Copilot から Gemini 2.5 Pro・Gemini 3 Flash 廃止 ／ Devin classic 環境設定 read-only 参照終了 ／ デスクトップフローの統合 Power Apps GA 予定 ／ Polymarket が Gemini 3.5 Pro 発表を約81%と見込む節目
+- 8/1: covered frontier model 60日 EO 期限 ／ Copilot in 30（SMB 向けトライアル）の CSP 提供開始
 - 8/3: 旧「Claude in Slack」退役
-- 8/4: Released Versions・Release Wave・非推奨一覧の定例更新
-- 8/5: Opus 4.1 Claude API 退役 ／ Cowork 倍増利用枠終了
+- 8/4: Released Versions・Release Wave・非推奨一覧・拡張機能 What's New の定例更新
+- 8/5: Opus 4.1 Claude API 退役 ／ Cowork 倍増利用枠終了 ／ M365 Copilot Release Notes 次バッチ見込み
+- 8月第1週: Power Platform Weekly の夏季休刊明け
 - 8/7 前後（推定）: Grok 4.6
 - 8/9: ChatGPT Atlas シャットダウン
 - 8/17: Claude Console 旧 Workbench 退役 ＋ 実験的プロンプトツール API 廃止
 - 8/26: OpenAI Assistants API 廃止 ／ o3 退役 ／ GPT-4.5 完全廃止
+- 8月下旬: Purview DLP 外部メール除外の GA 展開完了予定
 - 8/31: Sonnet 5 促進価格終了（→ $3/$15） ／ Power Automate モバイルアプリ廃止
 - 9月: iOS 27 / macOS 27 GA（AFM 3 本番）
+- 時期未定（数週間内）: Cowork 1 提供開始
 - 2027年7月以降: MCP の Roots / Sampling / Logging・レガシー HTTP+SSE の削除可能時期（7/28 から最低12カ月）
 
 ## 改善メモ
 
-- **欠損: 02_ai-news-Copilot の 07-30 分**: 本サマリー生成時点（07:10 JST）で `digests/2026/07/ai-news-2026-07-30.md` が未コミット（HTTP 404）。想定更新時刻は当日 06:10 頃のため、ソース側ルーチンの実行失敗の可能性がある。要確認。本日は Microsoft / Copilot / Power Platform 系の日次追跡（Release Notes、Copilot Studio What's New、Released Versions、M365 Roadmap、MC メッセージ）が丸ごと欠けている。
+- **欠損リカバリ済み: 02_ai-news-Copilot の 07-30 分**: 初回生成時点（07:10 JST）では `digests/2026/07/ai-news-2026-07-30.md` が未コミット（HTTP 404）だったが、07-31 07:00 の実行で取得できたため本サマリーを3ソース統合に再生成した。ソース側が当日 06:10 頃に間に合わず遅れてコミットされた形で、ルーチン自体の失敗ではない。遅延の常態化を確認するため、以後も 05 側の生成時刻と 02 のコミット時刻の差を注視する。
 - **同一記事で取得結果が割れた**: `claude.com/blog/bringing-mcp-2026-07-28-to-claude` について Master は本文を取得できた一方、industry は WebFetch 403 で「詳細未確認」としている。同一ホストでもソースによって到達可否が異なるため、403 の記録は取得元ソース名とセットで残すこと。
 - **Grok 4.6 の見込みを前倒し**: 前日サマリーは「8月下旬〜9月中旬（推定）」を採用していたが、Master の 7/24 Musk 発言を根拠とする修正に合わせて「8/7 前後（推定）」に変更した。根拠は二次報道のみで公式確認はない。
 - **障害の変化: Master**: `claude.com` / `support.claude.com` / `aws.amazon.com` の3ホストを新たにゲートウェイ拒否（CONNECT 403）と判定。うち `support.claude.com` は 2026-04-02 以降「オリジン 403」として台帳に記録してきたが、実体はゲートウェイ拒否だったと今回判明した（B-013 に追記）。
 - **障害の変化: industry**: `blog.modelcontextprotocol.io` の RSS（`/rss.xml`）が404、トップページの WebFetch は成功。07-29 に指摘した「サブドメイン単位で可否が割れている可能性」に対する部分的な回答にあたり、本文取得は可能・RSS は不可という切り分けになる。
 - Master: 新規提案 B-017（Claude 製品ブログ `claude.com/blog` を最優先ソースに追加）。継続提案4件（最多は B-013 403 の2分類記録、4回目）。
 - industry: 新規提案 B-007（決算ソースを「取得方法: IR一次ページ WebFetch 優先」として明記）。継続提案3件（最多は B-004 取得方法の WebSearch 優先化、31回目）。
+- Copilot: 新規提案 B-017（MS-4005 コレクションの取得方法と頻度を見直し）。継続提案5件（最多は B-011 Power Platform Blog のトピック記事照合、11回目）。
+- **障害の変化: Copilot**: `release-plan/2026wave1/microsoft-copilot-studio/` 配下が Learn MCP で M365 Roadmap の本文を返す事象を、既知の取得障害として新規登録した。末端の個別機能ページでも同じ挙動を確認しており、Copilot Studio の Release Wave 一次確認は当面 WebFetch か二次ソースに頼らざるを得ない。
 - 前日（07-29）分の欠損リカバリは対象なし（3ソース統合で生成済み）。
