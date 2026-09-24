@@ -88,11 +88,11 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
 
 ### GitHub Copilot
 
-- **Grok 4.7 が入った**（ハイライト2参照）。Copilot ラベルの changelog でこの日唯一の新規エントリである。9/19・9/20 はいずれも0件だった
-- **CLI 安定版 `v1.0.87` が出た**（ハイライト3参照）。⚠️ `v1.0.85` の破壊的変更3件は依然として未解消で、`copilot plugins list --json` のフラット配列化、横断フラグ `--kind` / `--scope` の削除、`plugins list` が MCP サーバー・skill・instruction・LSP を含まなくなった件が残る
+- [破壊的変更+新機能] **Grok 4.7 が入った**（ハイライト2参照）。Copilot ラベルの changelog でこの日唯一の新規エントリである。9/19・9/20 はいずれも0件だった
+- [破壊的変更] **CLI 安定版 `v1.0.87` が出た**（ハイライト3参照）。⚠️ `v1.0.85` の破壊的変更3件は依然として未解消で、`copilot plugins list --json` のフラット配列化、横断フラグ `--kind` / `--scope` の削除、`plugins list` が MCP サーバー・skill・instruction・LSP を含まなくなった件が残る
 - [セキュリティ] **Plugin4Shell は Copilot だけ未修正のまま4日経過した**: 4社とも security advisory は未公開で CVE も未採番、実攻撃の記録も出ていない。Microsoft は GitHub Copilot の修正を出しておらず、公表・修正時期・advisory のいずれについても公式な言及がない。Anthropic の Claude Code `2.1.179`、OpenAI の Codex `0.146.0` で修正済みという状況は不変である。⚠️ 一次の `www.air.security` と詳報媒体はゲートウェイ拒否が継続しており、修正の有無を追う経路が二次しかない
 - [据え置き] **9/18 の3本に変化はない**: code review の改善が一般提供になり、概要コメントの所見が Open / Resolved since last review / Previously missed の3区分に整理された。Copilot コメントの自動解決も、後続コミットに応じて Won't Fix / Incorrect の解決理由を付けるようになっている
-- **期限が6日後から連続する**: 9/28 にチャット3面統合・code review の既定 effort が Lite → Balanced・チャットのデータ保持がアカウント存続期間へ、10/1 に既存顧客の前払い必須、10/2 に4モデル廃止、10/19 に5モデル廃止（ハイライト1参照）、12/31 に Fable 5.1 / Fable 5 の ZDR 暫定免除終了が並ぶ
+- [予定] **期限が6日後から連続する**: 9/28 にチャット3面統合・code review の既定 effort が Lite → Balanced・チャットのデータ保持がアカウント存続期間へ、10/1 に既存顧客の前払い必須、10/2 に4モデル廃止、10/19 に5モデル廃止（ハイライト1参照）、12/31 に Fable 5.1 / Fable 5 の ZDR 暫定免除終了が並ぶ
   - https://github.blog/changelog/label/copilot/
 
 ### Copilot Studio / Power Platform
@@ -145,7 +145,7 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
 
 ### Cursor / xAI / Devin
 
-- **Cursor フォーラムの Announcements に 9/21 の2本が出た**（ハイライト2参照）。`Grok 4.7 is now Live!` と `Share your Thoughts on Grok 4.7` で、9/2 の Grok Bot Android 版以来19日ぶりの更新である。⚠️ 前日まで「19日間動きなし」と記録していたソースが本日動いた。動きなしの連続日数は翌日の不在を予告しない
+- [新機能] **Cursor フォーラムの Announcements に 9/21 の2本が出た**（ハイライト2参照）。`Grok 4.7 is now Live!` と `Share your Thoughts on Grok 4.7` で、9/2 の Grok Bot Android 版以来19日ぶりの更新である。⚠️ 前日まで「19日間動きなし」と記録していたソースが本日動いた。動きなしの連続日数は翌日の不在を予告しない
 - [据え置き] **Cursor changelog は 9/10 の Projects が最上位のまま**で12日間新規がない。⚠️ **モデル提供開始の告知がフォーラム側にしか出ない構図が Grok 4.7 でも再現した**。`cursor.com/grok` は Grok 4.7 を比較チャートに載せたが個別のスコア・価格・コンテキスト長を出しておらず、同ページで数値が明示されているのは Grok 4.6 だけである
 - [動向] **Cursor は GPT-6 Astra の提供開始を告知しないまま19日目**である（9/3 GA）。changelog とフォーラムの両方を毎日取得したうえでの不在で、11/12 の OpenAI による供給停止予定と併せて読む
 - [動向] **xAI のモデル公開が Cursor 経由で告知される形が定着した**: Grok 4.7 の告知は Cursor のフォーラムに「we are releasing Grok 4.7」と xAI 主語で投稿され、`cursor.com/blog/grok-4-7` は本文を持たず `x.ai` へのリンクだけを置いている。SpaceX による Cursor 買収（8/14・$60B）以降、発表面と製品面が同一グループ内で束ねられている
@@ -179,7 +179,7 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
 - **10/14**: **OpenAI の `gpt-5.5` が ChatGPT / ChatGPT Work / Codex から退役**（移行先 `gpt-5.6-sol`・API は対象外）
 - **10/15 以降**: `claude-haiku-4-5-20251001` の暫定退役日（確定日ではない）
 - **10/16–11/11**: OpenAI DevDay Exchange 8都市（東京は 10/20）
-- **10/19**: **GitHub Copilot が Gemini 3.7 Flash / GPT-5.5 / GPT-5.4 / GPT-5.4 mini / Grok 4.5 を全体験から廃止**（5モデル。ハイライト1参照）
+- [廃止] **10/19**: **GitHub Copilot が Gemini 3.7 Flash / GPT-5.5 / GPT-5.4 / GPT-5.4 mini / Grok 4.5 を全体験から廃止**（5モデル。ハイライト1参照）
 - **10/22 / 10/23**: Apple の Volume Purchasing 開始 / iPhone Duo 発売（iOS 27.1）
 - **10/23**: OpenAI のレガシースナップショット退役
 - **10/26 頃**: Microsoft AI の MAI モデル行動規範の公開協議が終了
@@ -210,7 +210,7 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
 
 ## 改善メモ
 
-- ソース間の矛盾: 10/19 の GitHub Copilot 廃止件数が 01 で5件（個別記事の本文で確定）、03 で6件（一覧要約ベース・据え置き）に割れた。本サマリーは5件を採用した（ハイライト1参照）
+- [観測] ソース間の矛盾: 10/19 の GitHub Copilot 廃止件数が 01 で5件（個別記事の本文で確定）、03 で6件（一覧要約ベース・据え置き）に割れた。本サマリーは5件を採用した（ハイライト1参照）
 - 新規提案: `01 B-081`（xAI / Grok 項に Cursor フォーラムと Copilot changelog を代替一次として明記）／`01 B-080`（廃止・退役告知は一覧要約ではなく個別記事から型番を全件転記）／`02 B-075`（日次突合の判定キーが `ms.date` 単独で、`updated_at` / `git_commit_id` だけが動く改訂を検知できない）／`03 B-042`（xAI の一次料金ページを「モデル API 料金」定点に追加）
 - 3ソースに共通する形: 一次ページからの抽出件数が日ごとに揺れる事例が独立に4件出た（03 の OpenAI 料金 11節／前日18節・廃止 43件／前日39件、02 の Roadmap 総項目 1,768／前日1,775、01 の HF `limit=4` での取りこぼし）。**件数の一致を差分判定の根拠にしない**運用が3ソースで同時に要る
 - 継続提案: 01 が27件（最多 B-024 取りこぼし検出手順・48回目）／02 が37件（最多 B-011 Power Platform Blog の WebSearch 照合・62回目）／03 が5件（最多 B-004 取得方法の WebSearch 優先化・85回目）

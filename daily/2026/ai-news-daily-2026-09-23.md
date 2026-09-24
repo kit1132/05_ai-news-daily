@@ -76,7 +76,7 @@
 
 ### Claude / Anthropic
 
-- **Opus 5.5 の公開**（ハイライト1参照）。`2.1.280` の権限変更はハイライト3を参照
+- [料金+破壊的変更] **Opus 5.5 の公開**（ハイライト1参照）。`2.1.280` の権限変更はハイライト3を参照
 - [動向] **publish 間隔**: Claude Code `2.1.280` は 9/22 15:44:39 UTC に publish され、`2.1.278`（9/19 01:48:59 UTC）から3日ぶりだった。UTC 09-20・09-21 は publish 0件である。`dist-tags` は `{stable: 2.1.267, latest: 2.1.280, next: 2.1.280}` だった
 - [動向] **メッセージ内ツール定義の beta**: 開発者が、`inline-tools-2026-09-15` ヘッダーを付けると会話途中の system メッセージの `tool_addition` ブロックでツールの完全な定義を運べるようになった。`tools` を編集せずに追加・スキーマ変更・サーバーツールの版上げができ、プロンプトキャッシュを壊さない。`mcp-client-2026-09-15` を併用すると定義に MCP toolset を置け、応答の `mcp_tool_listing` ブロックがサーバーごとの取得済みツール一覧を記録する
 - [動向] **1タスクの費用の分解**: `claude.com/blog` に 9/22 の `What a task costs on Opus 5.5` が出て、入出力2割・キャッシュ読み取り6割の値下げを前提に費用の決まり方を整理している
@@ -92,7 +92,7 @@
 
 ### OpenAI / Codex / ChatGPT
 
-- **GPT-6 Sol / Luna の公開**（ハイライト2参照）。`developers.openai.com/api/docs/changelog` は 9/15 から7日ぶりに動き、`learn.chatgpt.com` は 9/18 から4日ぶりに動いた
+- [料金+新機能] **GPT-6 Sol / Luna の公開**（ハイライト2参照）。`developers.openai.com/api/docs/changelog` は 9/15 から7日ぶりに動き、`learn.chatgpt.com` は 9/18 から4日ぶりに動いた
 - [動向] **Codex の安定版が4日ぶりに動いた**: 安定版が `rust-v0.156.0`（9/22）へ上がり、`rust-v0.155.1`（9/18 20:03 UTC）から止まっていた状態が解消した。`0.156.0` 系は `alpha.18`（9/22）まで刻まれてから安定版が出ている
   - ⚠️ 同日に `0.157.0` 系の pre-release が `alpha.3` から `alpha.9` まで7本出た（前日の `alpha.1` から24時間で8本）。開発の山は releases ページの上位だけでは追えない
   - ⚠️ `github.com/openai/codex` の個別タグ本文は本日も取得できなかった（releases ページ上でリリース本文の読み込みエラーが継続）
