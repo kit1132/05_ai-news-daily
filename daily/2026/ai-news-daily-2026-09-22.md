@@ -79,7 +79,7 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
 
 - [版更新] **Codex の alpha が次のマイナー系列に進んだ**: tags に `rust-v0.157.0-alpha.1` が出た（9/21 18:08 UTC）。9/17 に `0.156.0-alpha.1` を切ってから4日である。`0.156.0` 系は `alpha.9`（9/20 00:17）から `alpha.16`（9/21 16:51）まで2日で8本刻まれた。⚠️ **安定版は `rust-v0.155.1`（9/18 20:03 UTC）のまま4日動いていない**。開発の山は alpha の刻み速度に出ており、releases ページの上位だけでは追えない
   - https://github.com/openai/codex/tags
-- [料金] **changelog と料金ページに改定はない**: `learn.chatgpt.com` は 9/18 の2本（ChatGPT for iOS 1.2026.251・Codex CLI 0.155.1）が最上位、`developers.openai.com/api/docs/changelog` は 9/15 の API キー作成ガバナンス制御から7日動きがない。料金は29日連続で据え置きで、GPT-6 Astra $10/$50、GPT-5.6 Sol $4/$20（期間限定価格は少なくとも 11/21 まで）、Terra $2/$12、Luna $0.20/$1.20 が不変である
+- [据え置き] **changelog と料金ページに改定はない**: `learn.chatgpt.com` は 9/18 の2本（ChatGPT for iOS 1.2026.251・Codex CLI 0.155.1）が最上位、`developers.openai.com/api/docs/changelog` は 9/15 の API キー作成ガバナンス制御から7日動きがない。料金は29日連続で据え置きで、GPT-6 Astra $10/$50、GPT-5.6 Sol $4/$20（期間限定価格は少なくとも 11/21 まで）、Terra $2/$12、Luna $0.20/$1.20 が不変である
 - [観測] **抽出件数が日ごとに揺れている**: 料金ページの抽出は本日11節で、前日の18節から縮小した。レガシー節とファインチューニング全10行が再び落ちており、09-20 と同じ縮小が再現している。廃止ページも本日は Upcoming 15件・Past 28件の計43件で、前日の39件（12＋27）から増えた。⚠️ **件数の一致は差分判定の根拠にしない**運用が要る
   - https://developers.openai.com/api/docs/pricing
 - [据え置き] **退役告知の内容は動いていない**: 最新の告知日は `gpt-5.4-cyber` → `gpt-5.6-cyber`（停止 10/1）のままで、撤回・延期・新規追加はない。`alignment.openai.com` の事案レポート6件・notices 3件も据え置きで、notices 最新は 9/11 の RubyGems（5月のエージェント活動は「無害なタスクと公開情報の取得」とし、悪意あるパッケージ公開の主張は未確認で調査継続）から11日間動きがない
@@ -141,26 +141,26 @@ Added のうち主なものは、Auto ルーティング階層の起動時既定
   - https://ai.google.dev/gemini-api/docs/changelog
 - [廃止] **廃止ページで新たな停止日を1件検知した**: `gemini-2.5-flash-image`（公開 2025-10-02）の停止が **2026-10-02**、推奨代替が `gemini-3.1-flash-image-preview` と記載されているのを初めて確認した。⚠️ 一方で前日に同じページで一次確定した `gemini-omni-flash-preview` の 9/30 停止は本日の列挙に現れていない。**一度記録した期限は以後の抽出に現れなくても保持する**。画像生成モデルは関心領域外のため期限としてのみ記録する
 - [観測] **Workspace Updates に 9/18 より新しい投稿はない**（月別アーカイブで確認）。9/18 は週次リカップと Gemini Notebook の新学期向け機能の2本である。⚠️ 同一アーカイブページの日付グルーピングが前日と食い違い、前日 9/18 群としていた3本（Notebooks in Gemini / Workspace Studio / Expert Intelligence）を本日は 9/17 群として返した。記事 href は同一で新規ではないため、日付は href で突き合わせる
-- [料金] **HF の `google` org は `gnm-v3`（作成 9/1 / 更新 9/2）が最新のまま**で、新規作成も更新もない。既報として、`gemini-3.8-flash` の入力 $0.75 / 出力 $3.75 は 2026-12-31 まで、Gemini 3.5 Pro の GA は未ローンチが継続している
+- [据え置き] **HF の `google` org は `gnm-v3`（作成 9/1 / 更新 9/2）が最新のまま**で、新規作成も更新もない。既報として、`gemini-3.8-flash` の入力 $0.75 / 出力 $3.75 は 2026-12-31 まで、Gemini 3.5 Pro の GA は未ローンチが継続している
 
 ### Cursor / xAI / Devin
 
 - [新機能] **Cursor フォーラムの Announcements に 9/21 の2本が出た**（ハイライト2参照）。`Grok 4.7 is now Live!` と `Share your Thoughts on Grok 4.7` で、9/2 の Grok Bot Android 版以来19日ぶりの更新である。⚠️ 前日まで「19日間動きなし」と記録していたソースが本日動いた。動きなしの連続日数は翌日の不在を予告しない
 - [据え置き] **Cursor changelog は 9/10 の Projects が最上位のまま**で12日間新規がない。⚠️ **モデル提供開始の告知がフォーラム側にしか出ない構図が Grok 4.7 でも再現した**。`cursor.com/grok` は Grok 4.7 を比較チャートに載せたが個別のスコア・価格・コンテキスト長を出しておらず、同ページで数値が明示されているのは Grok 4.6 だけである
-- [動向] **Cursor は GPT-6 Astra の提供開始を告知しないまま19日目**である（9/3 GA）。changelog とフォーラムの両方を毎日取得したうえでの不在で、11/12 の OpenAI による供給停止予定と併せて読む
+- [据え置き] **Cursor は GPT-6 Astra の提供開始を告知しないまま19日目**である（9/3 GA）。changelog とフォーラムの両方を毎日取得したうえでの不在で、11/12 の OpenAI による供給停止予定と併せて読む
 - [動向] **xAI のモデル公開が Cursor 経由で告知される形が定着した**: Grok 4.7 の告知は Cursor のフォーラムに「we are releasing Grok 4.7」と xAI 主語で投稿され、`cursor.com/blog/grok-4-7` は本文を持たず `x.ai` へのリンクだけを置いている。SpaceX による Cursor 買収（8/14・$60B）以降、発表面と製品面が同一グループ内で束ねられている
 - [観測] **Devin は一次・代替一次のいずれからも読めない状態が継続**している（`docs.devin.ai` / `cli.devin.ai` ともゲートウェイ拒否）。二次では Devin Desktop の最新が 9/15 時点で v3.10.27 とされるが一次未読である
 
 ### MCP / オープンウェイト
 
-- [料金] **MCP 公式ブログは 8/22 の「The New MCP Roadmap」が最上位のまま**で31日間新規がない。⚠️ 仕様側が1ヶ月止まる一方で実装側の採用は進んでおり、本日の Copilot CLI `v1.0.87` は `copilot mcp list` / `get` に組み込み `github-mcp-server` を載せ、MCP の低速接続警告しきい値を設定項目にした。**WebMCP Challenge の受賞発表は 9/23** である（賞金総額 $35,000）
+- [据え置き] **MCP 公式ブログは 8/22 の「The New MCP Roadmap」が最上位のまま**で31日間新規がない。⚠️ 仕様側が1ヶ月止まる一方で実装側の採用は進んでおり、本日の Copilot CLI `v1.0.87` は `copilot mcp list` / `get` に組み込み `github-mcp-server` を載せ、MCP の低速接続警告しきい値を設定項目にした。**WebMCP Challenge の受賞発表は 9/23** である（賞金総額 $35,000）
 - [据え置き] **Qwen を除く7 org は11日間まったく動いていない**: `moonshotai` / `deepseek-ai` / `meta-models` / `mistralai` / `zai-org` / `openai` / `google` を `createdAt` 降順と `lastModified` 降順の両方で確認したが、9/21 に作成または更新されたリポジトリは1件もなく、テキスト系モデルは 9/11 以降の新規作成も更新もゼロである。`Qwen/Qwen-Image-2.1` が 9/21 04:50 UTC に更新されたが画像生成のため関心領域外である
   - ⚠️ 前日の記録にあった `meta-models/utils` は本日の上位4件のいずれにも現れなかった。同 org は `limit=4` では8月作成の Muse-Glimmer 系4件で埋まるため、次回は `limit` を上げて突き合わせる必要がある
 
 ### Apple / 市場データ
 
 - [据え置き] **`developer.apple.com/news/` に 9/18 より新しいエントリはない**。最上位は 9/18 の iPhone Duo 向け開発リソース（Xcode 27.1 beta・Figma / Sketch デザインキット）で AI 関連の記載はない。⚠️ AI 関連の独立エントリは 6/11 の ImageCreator クラス廃止告知のまま3ヶ月動いていない。既報として iPhone Duo は 10/23 発売、macOS 27 は Apple silicon 専用、2027年4月から最小 SDK 要件が iOS 27 世代へ上がる
-- [料金] **Similarweb・IDC・MM総研・NRC はいずれも新規公表がない**。引用可能な値は 09-20 から動いていない。Similarweb 8月分は ChatGPT **55.5%**・Gemini 25.6%・Claude 9.3%・DeepSeek 3.4%・Grok 2.4%・Copilot 1.6%・Perplexity 0.9%、IDC 国内 AI 支出は 2025年 2兆3,725億円 → 2029年 6兆8,897億円（CAGR 36.0%）、Gartner 世界 AI 支出は 2026年 $2.59兆（+47%）、MM総研 国内生成AI個人利用率は 21.8% で据え置きである。Similarweb 9月分の公表は未検知である
+- [据え置き] **Similarweb・IDC・MM総研・NRC はいずれも新規公表がない**。引用可能な値は 09-20 から動いていない。Similarweb 8月分は ChatGPT **55.5%**・Gemini 25.6%・Claude 9.3%・DeepSeek 3.4%・Grok 2.4%・Copilot 1.6%・Perplexity 0.9%、IDC 国内 AI 支出は 2025年 2兆3,725億円 → 2029年 6兆8,897億円（CAGR 36.0%）、Gartner 世界 AI 支出は 2026年 $2.59兆（+47%）、MM総研 国内生成AI個人利用率は 21.8% で据え置きである。Similarweb 9月分の公表は未検知である
 
 ## 直近の注目予定
 

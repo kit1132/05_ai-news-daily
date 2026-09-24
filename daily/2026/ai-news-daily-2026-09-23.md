@@ -77,8 +77,8 @@
 ### Claude / Anthropic
 
 - [料金+破壊的変更] **Opus 5.5 の公開**（ハイライト1参照）。`2.1.280` の権限変更はハイライト3を参照
-- [動向] **publish 間隔**: Claude Code `2.1.280` は 9/22 15:44:39 UTC に publish され、`2.1.278`（9/19 01:48:59 UTC）から3日ぶりだった。UTC 09-20・09-21 は publish 0件である。`dist-tags` は `{stable: 2.1.267, latest: 2.1.280, next: 2.1.280}` だった
-- [動向] **メッセージ内ツール定義の beta**: 開発者が、`inline-tools-2026-09-15` ヘッダーを付けると会話途中の system メッセージの `tool_addition` ブロックでツールの完全な定義を運べるようになった。`tools` を編集せずに追加・スキーマ変更・サーバーツールの版上げができ、プロンプトキャッシュを壊さない。`mcp-client-2026-09-15` を併用すると定義に MCP toolset を置け、応答の `mcp_tool_listing` ブロックがサーバーごとの取得済みツール一覧を記録する
+- [版更新] **publish 間隔**: Claude Code `2.1.280` は 9/22 15:44:39 UTC に publish され、`2.1.278`（9/19 01:48:59 UTC）から3日ぶりだった。UTC 09-20・09-21 は publish 0件である。`dist-tags` は `{stable: 2.1.267, latest: 2.1.280, next: 2.1.280}` だった
+- [新機能] **メッセージ内ツール定義の beta**: 開発者が、`inline-tools-2026-09-15` ヘッダーを付けると会話途中の system メッセージの `tool_addition` ブロックでツールの完全な定義を運べるようになった。`tools` を編集せずに追加・スキーマ変更・サーバーツールの版上げができ、プロンプトキャッシュを壊さない。`mcp-client-2026-09-15` を併用すると定義に MCP toolset を置け、応答の `mcp_tool_listing` ブロックがサーバーごとの取得済みツール一覧を記録する
 - [動向] **1タスクの費用の分解**: `claude.com/blog` に 9/22 の `What a task costs on Opus 5.5` が出て、入出力2割・キャッシュ読み取り6割の値下げを前提に費用の決まり方を整理している
   - ターン数: 40ターンから25ターンに減ると入力処理が 2.8M から 1.75M トークンへ落ち、費用は約4割減る
   - キャッシュヒット率: 2.8M 入力（うち9割キャッシュ）・出力 60K のセッションで入力側は約 $1.62、キャッシュ無しなら $11.20 になる
@@ -93,11 +93,11 @@
 ### OpenAI / Codex / ChatGPT
 
 - [料金+新機能] **GPT-6 Sol / Luna の公開**（ハイライト2参照）。`developers.openai.com/api/docs/changelog` は 9/15 から7日ぶりに動き、`learn.chatgpt.com` は 9/18 から4日ぶりに動いた
-- [動向] **Codex の安定版が4日ぶりに動いた**: 安定版が `rust-v0.156.0`（9/22）へ上がり、`rust-v0.155.1`（9/18 20:03 UTC）から止まっていた状態が解消した。`0.156.0` 系は `alpha.18`（9/22）まで刻まれてから安定版が出ている
+- [版更新] **Codex の安定版が4日ぶりに動いた**: 安定版が `rust-v0.156.0`（9/22）へ上がり、`rust-v0.155.1`（9/18 20:03 UTC）から止まっていた状態が解消した。`0.156.0` 系は `alpha.18`（9/22）まで刻まれてから安定版が出ている
   - ⚠️ 同日に `0.157.0` 系の pre-release が `alpha.3` から `alpha.9` まで7本出た（前日の `alpha.1` から24時間で8本）。開発の山は releases ページの上位だけでは追えない
   - ⚠️ `github.com/openai/codex` の個別タグ本文は本日も取得できなかった（releases ページ上でリリース本文の読み込みエラーが継続）
-- [料金] **料金ページの抽出が本日は全節そろった**: 09-20・09-22 に落ちていたレガシー節（`gpt-5.2` / `gpt-5.1` / GPT-4 系・o 系・3.5 系）とファインチューニング全10行が復帰した。据え置き分は GPT-6 Astra $10/$50（キャッシュ $1.00）、GPT-5.6 Sol $4/$20、Terra $2/$12、Luna $0.20/$1.20、`gpt-5.6-cyber` / `gpt-5.5-cyber` 各 $12.50/$75、`gpt-5.3-codex` $1.75/$14、`gpt-rosalind-research` $5/$25、`chat-latest` $5/$30、`gpt-5-search-api` $1.25/$10 である。Batch・Flex は標準の50%、Fast mode は2倍。⚠️ `gpt-5.4-cyber` の行は 09-14 の消滅から不掲載が続く（停止まで8日）
-- [廃止] **廃止ページの件数が日ごとに揺れる**: 本日の抽出は Upcoming 10件（対象27モデル）・Past 28件で、前日の Upcoming 15件から減った。告知の内容に撤回・延期・新規追加はない。⚠️ 告知単位の数え方が日ごとに揺れるため、件数の一致は差分判定の根拠にしない
+- [観測] **料金ページの抽出が本日は全節そろった**: 09-20・09-22 に落ちていたレガシー節（`gpt-5.2` / `gpt-5.1` / GPT-4 系・o 系・3.5 系）とファインチューニング全10行が復帰した。据え置き分は GPT-6 Astra $10/$50（キャッシュ $1.00）、GPT-5.6 Sol $4/$20、Terra $2/$12、Luna $0.20/$1.20、`gpt-5.6-cyber` / `gpt-5.5-cyber` 各 $12.50/$75、`gpt-5.3-codex` $1.75/$14、`gpt-rosalind-research` $5/$25、`chat-latest` $5/$30、`gpt-5-search-api` $1.25/$10 である。Batch・Flex は標準の50%、Fast mode は2倍。⚠️ `gpt-5.4-cyber` の行は 09-14 の消滅から不掲載が続く（停止まで8日）
+- [観測] **廃止ページの件数が日ごとに揺れる**: 本日の抽出は Upcoming 10件（対象27モデル）・Past 28件で、前日の Upcoming 15件から減った。告知の内容に撤回・延期・新規追加はない。⚠️ 告知単位の数え方が日ごとに揺れるため、件数の一致は差分判定の根拠にしない
 - [動向] **公式フォーラムが12日ぶりに動いた**: `community.openai.com` の Announcements RSS が 9/22 18:16 UTC に更新された。GPT-6 Sol / Luna の告知で、benchmark のチャートは載るが数値は本文に書かれていない
 - [据え置き] **事案レポートは12日間動きなし**: `alignment.openai.com/misalignment-reports/` は事案レポート6件・notices 3件で据え置きである。notices は 9/11 RubyGems / 9/5 DSEwiki / 8/26 Hugging Face
 - [観測] ⚠️ `openai.com` / `help.openai.com` のオリジン403は継続しており、本日も一次には到達できていない
@@ -118,13 +118,13 @@
 
 ### Copilot Studio / Power Platform
 
-- [動向] **標準ハーネスの入門が「新エクスペリエンスをオフにする」から始まる形に書き換わった**: `microsoft-copilot-studio/fundamentals-get-started`（`ms.date` 2026-09-22・`updated_at` 2026-09-22T19:03Z）が本日改訂され、見出しが「Quickstart: Create and deploy an agent with the standard harness」になった。手順2が New experience トグルをオフにし Submit を選んでフィードバックパネルを閉じる操作で、研修や手順書が前提にしてきた「サインインしたら標準ハーネスの画面」は一次の上で成立しなくなる
+- [破壊的変更] **標準ハーネスの入門が「新エクスペリエンスをオフにする」から始まる形に書き換わった**: `microsoft-copilot-studio/fundamentals-get-started`（`ms.date` 2026-09-22・`updated_at` 2026-09-22T19:03Z）が本日改訂され、見出しが「Quickstart: Create and deploy an agent with the standard harness」になった。手順2が New experience トグルをオフにし Submit を選んでフィードバックパネルを閉じる操作で、研修や手順書が前提にしてきた「サインインしたら標準ハーネスの画面」は一次の上で成立しなくなる
   - `harnesses-overview`: 「Choose a harness」から Harnesses in Copilot Studio へ改題された。ハーネスを「設計したエージェントと推論を担うモデルのあいだに立つランタイム」と定義し、いつモデルを呼ぶか・何を送るか・返ってきたものをどう解釈しツールを呼ぶかを決める層だと説明する
   - `agents-experience/overview`: 「Agents powered by the GitHub Copilot Harness overview」として自然言語でエージェントを記述する方式に (preview) が付いた。標準ハーネスとの相互移行は不可で、GitHub Copilot ハーネスではオーケストレーション挙動を設定できず、構築・テスト・評価のいずれも Copilot Credits を消費する
   - 3ハーネスの位置づけ（GitHub Copilot ハーネス＝複数ステップの業務処理、標準ハーネス＝ルールベースのエージェントとエージェントフロー、Copilot チャットハーネス＝M365 Copilot Chat の拡張）と課金の記述は 8/5 掲載時から不変である。標準ハーネスへ戻る経路はトグルのオフ以外に2つある（`switch-experiences` の「Other ways to build」からの作成と、Agents / Workflows 一覧から開く方法）
   - ⚠️ この3本の改訂は Copilot Studio What's New（July 2026 節が最新）にも Release Notes（August 25 バッチ）にも現れていない
   - https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview
-- [新機能] **統制ブログに新機能の告知はない**: 製品チームが、エージェント統制を「観測し続ける → 度合いに応じて対応する → 適切なところは自動化する」の3段で運用モデル化する考え方を示した（Tech Community・9/22・本 board では1週間ぶりの新規）。⚠️ 主眼は10月の PPCC 2026 セッション告知で、製品面の言及は Agent 365 を横断管理レイヤーとして使うことと Agents Map による可視化の2点にとどまる
+- [据え置き] **統制ブログに新機能の告知はない**: 製品チームが、エージェント統制を「観測し続ける → 度合いに応じて対応する → 適切なところは自動化する」の3段で運用モデル化する考え方を示した（Tech Community・9/22・本 board では1週間ぶりの新規）。⚠️ 主眼は10月の PPCC 2026 セッション告知で、製品面の言及は Agent 365 を横断管理レイヤーとして使うことと Agents Map による可視化の2点にとどまる
   - https://techcommunity.microsoft.com/t5/copilot-studio-blog/governance-is-becoming-agentic-too-how-enterprises-can-operate/ba-p/4556820
 - [据え置き] **What's New は8月節・9月節とも未作成**: 掲載は July 2026 節が最新のままである（`ms.date` 2026-08-18・`updated_at` 2026-09-17T19:04Z で6日連続据え置き）。⚠️ 8/3 に GA した GitHub Copilot ハーネスは June 節で `(Production-ready preview)` と書かれたままで、GA から51日連続の未反映になる
 - [据え置き] **モデル表とガイダンスハブは据え置き**: 標準ハーネスの `authoring-select-agent-model` は Default が全13リージョンで GPT-5.5 Chat のままである。ガイダンスハブは169ページを全件取得して `ms.date` を突合し、動いたページはゼロだった
@@ -160,10 +160,10 @@
 
 ### Google
 
-- [動向] **Gemini 2.5 系へのアクセスが既存利用者に限定された**: Google が、過去に実際に使った利用者に限って Gemini 2.5 系の API アクセスを続ける方針を Gemini API changelog の 9/18 付エントリで示した。新規の利用者は API から呼べず、既存利用者には「追って通知があるまで」提供が続く。新規プロジェクトの移行先は 3.5 Flash-Lite または 3.8 Flash と案内されている
+- [破壊的変更] **Gemini 2.5 系へのアクセスが既存利用者に限定された**: Google が、過去に実際に使った利用者に限って Gemini 2.5 系の API アクセスを続ける方針を Gemini API changelog の 9/18 付エントリで示した。新規の利用者は API から呼べず、既存利用者には「追って通知があるまで」提供が続く。新規プロジェクトの移行先は 3.5 Flash-Lite または 3.8 Flash と案内されている
   - ⚠️ モデル ID は明示されていない。「2.5 models」とだけ書かれており、対象の粒度は一次から確定できない
   - ⚠️ 前日の記録では 9/17 の `antigravity-preview-09-2026`（組み込みツール引数の PascalCase 化・ファイル編集の行範囲置換化という破壊的変更を含む）を最上位としていた。同じページの上位に1日後のエントリが後から現れた形である
-- [廃止] **廃止ページの抽出が復帰した**: 68モデルを列挙し、09-22 の抽出に現れなかった `gemini-omni-flash-preview` の 9/30 停止（代替 `gemini-omni-1.1-flash`）が本日は列挙に戻った。`antigravity-preview-05-2026` の 10/5 停止、`gemini-2.5-flash-image` の 10/2 停止も再確認している。⚠️ 2日続けて抽出内容が入れ替わっており、一度記録した期限を台帳側で保持する運用が実際に効いた形になった
+- [観測] **廃止ページの抽出が復帰した**: 68モデルを列挙し、09-22 の抽出に現れなかった `gemini-omni-flash-preview` の 9/30 停止（代替 `gemini-omni-1.1-flash`）が本日は列挙に戻った。`antigravity-preview-05-2026` の 10/5 停止、`gemini-2.5-flash-image` の 10/2 停止も再確認している。⚠️ 2日続けて抽出内容が入れ替わっており、一度記録した期限を台帳側で保持する運用が実際に効いた形になった
 - [動向] **Workspace 側の AI 連携は1本**: Workday for Google Sheets が 9/21 から利用できるようになった。Workday Adaptive Planning を Google Sheets / Slides に接続し、自然言語の要約・異常検知・可視化・アドホックレポートを Sheets 内で行える。Workspace 全エディションと Workspace Individual、個人アカウントが対象で、Workday Adaptive Planning のライセンスが要る。Rapid / Scheduled の両リリース系統が対象だが、Workday 側と Workspace 側の両方で管理者の有効化が必要である
   - 同日の「Google Sheets の手動計算設定」は AI 連携ではないため対象外とした
 - [据え置き] **HF の `google` org に動きなし**: `gnm-v3`（作成 9/1 / 更新 9/2）が最新のままで新規作成も更新もない。`blog.google` は 301（ゲートウェイ通過）で、⚠️ 応答に日付が出ないため差分判定には使えない
@@ -187,9 +187,9 @@
 - [据え置き] **MCP 仕様側は32日間止まっている**: `blog.modelcontextprotocol.io`（RSS `index.xml`）は 200 だが、8/22 の「The New MCP Roadmap」が最上位のままである。その前は 7/28 の 2026-07-28 仕様、7/27 の Ruby SDK 1.0 である
   - ⚠️ 仕様が止まる一方で実装側は運用設定を増やし続けている。Claude Code `2.1.280` は MCP ツール説明の 2,048 文字上限を環境変数で変更できるようにし、Claude API は `mcp-client-2026-09-15` で MCP toolset をメッセージ内定義に載せられるようにした
   - WebMCP Challenge の受賞発表は本日 9/23 で賞金総額 $35,000 である。結果は未確認である
-- [動向] **8 org のいずれにも 9/22 の作成・更新はゼロ**: `Qwen` / `moonshotai` / `deepseek-ai` / `meta-models` / `mistralai` / `zai-org` / `openai` / `google` を `createdAt` 降順と `lastModified` 降順の両方で確認した。各 org の最新作成は `Qwen-Image-2.1-PE-I2I` 9/20 ／ `DeepSeek-V4.1-Flash` 9/10 ／ `gnm-v3` 9/1 ／ `GLM-5.3-Flash-BF16` 8/25 ／ `Muse-Glimmer-30B-ExecuTorch-PTE` 8/10 ／ `Shieldstral-1.0-3B` 7/16 ／ `Kimi-K3` 6/13 ／ `privacy-filter` 4/17 である
+- [据え置き] **8 org のいずれにも 9/22 の作成・更新はゼロ**: `Qwen` / `moonshotai` / `deepseek-ai` / `meta-models` / `mistralai` / `zai-org` / `openai` / `google` を `createdAt` 降順と `lastModified` 降順の両方で確認した。各 org の最新作成は `Qwen-Image-2.1-PE-I2I` 9/20 ／ `DeepSeek-V4.1-Flash` 9/10 ／ `gnm-v3` 9/1 ／ `GLM-5.3-Flash-BF16` 8/25 ／ `Muse-Glimmer-30B-ExecuTorch-PTE` 8/10 ／ `Shieldstral-1.0-3B` 7/16 ／ `Kimi-K3` 6/13 ／ `privacy-filter` 4/17 である
   - ⚠️ Qwen を除く7 org のテキスト系モデルは 9/11 以降12日間、新規作成も更新も1件もない。前々日に記録した `meta-models/utils`（作成 9/17）は `limit=8` でも現れず、公開一覧から外れたとみられる
-- [動向] **HF の `downloads` 実測値**（2026-09-22 19:10 UTC 取得・増減の解釈はしない）: `Qwen3.8-27B-FP8` 6,473,584 ／ `Qwen3.8-Flash-Next` 787,525 ／ `moonshotai/Kimi-K3` 1,900,376 ／ `deepseek-ai/DeepSeek-V4.1-Flash` 542,014 ／ `zai-org/GLM-5.3-Flash` 3,547,021 ／ `meta-models/Muse-Glimmer-30B-GGUF` 496,331 ／ `openai/gpt-oss-20b` 6,714,095 ／ `google/timesfm-3.0-pytorch` 1,151,294
+- [観測] **HF の `downloads` 実測値**（2026-09-22 19:10 UTC 取得・増減の解釈はしない）: `Qwen3.8-27B-FP8` 6,473,584 ／ `Qwen3.8-Flash-Next` 787,525 ／ `moonshotai/Kimi-K3` 1,900,376 ／ `deepseek-ai/DeepSeek-V4.1-Flash` 542,014 ／ `zai-org/GLM-5.3-Flash` 3,547,021 ／ `meta-models/Muse-Glimmer-30B-GGUF` 496,331 ／ `openai/gpt-oss-20b` 6,714,095 ／ `google/timesfm-3.0-pytorch` 1,151,294
 - [観測] A2A（Agent2Agent）の AAIF 参加は未確定のままで、一次3ホストはゲートウェイ拒否が継続する
 
 ### Apple / 市場データ / 企業構造

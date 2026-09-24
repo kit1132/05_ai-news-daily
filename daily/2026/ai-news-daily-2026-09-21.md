@@ -77,7 +77,7 @@
 ### OpenAI / Codex / ChatGPT
 
 - **Sponsored Agents**（ハイライト3参照）
-- [料金] **料金ページは28日連続で据え置き**: OpenAI の主要モデル単価に改定告知は出ていない。GPT-6 Astra 短文脈 $10／$50・長文脈 $20／$75、GPT-5.6 Sol $4／$20（期間限定価格は少なくとも 11/21 まで）、Terra $2／$12、Luna $0.20／$1.20 で不変である。全18節を列挙した結果、09-20 に欠落したレガシー行（`gpt-5.5` $5／$30 ほか）が復帰した
+- [据え置き] **料金ページは28日連続で据え置き**: OpenAI の主要モデル単価に改定告知は出ていない。GPT-6 Astra 短文脈 $10／$50・長文脈 $20／$75、GPT-5.6 Sol $4／$20（期間限定価格は少なくとも 11/21 まで）、Terra $2／$12、Luna $0.20／$1.20 で不変である。全18節を列挙した結果、09-20 に欠落したレガシー行（`gpt-5.5` $5／$30 ほか）が復帰した
   - 本日はじめて記録した項目は次のとおりで、いずれも単価改定ではなく抽出漏れである
   - `gpt-daybreak-blue-latest` / `gpt-daybreak-red-latest`: それぞれ `gpt-5.6-sol` / `gpt-5.6-cyber` を指すエイリアス
   - `gpt-5.6-cyber`: キャッシュ $1.25・キャッシュ書き込み $15.625（`gpt-5.5-cyber` には書き込み行が無い）
@@ -124,12 +124,12 @@
   - 認可の範囲外: FedRAMP Moderate にも DoD SRG にも含まれず、CJIS・IRS 1075 等の既存のコンプライアンス証明にも入らない。CUI・機密・輸出管理対象・高機微データの処理には使えない
   - 連邦 GCC・GCC High・DoD では設定項目自体が管理センターに現れない
   - https://learn.microsoft.com/en-us/microsoft-365/copilot/anthropic-non-federal-gcc
-- [動向] **会話の共有リンクを組織単位で止められる**: 管理者が、ユーザーによる Copilot の会話・応答の共有リンク生成をブロックできる（`microsoft-copilot-manage-content-sharing`・`ms.date` 2026-09-15・掲載歴ゼロ）。共有は既定でオンで、対象は Microsoft Copilot アプリと M365 アプリの両方である。閲覧には AI Reader、変更には AI Admin ロールが要る。⚠️ 共有リンクの受け手に、会話で参照されたファイル・メール・チャット・会議へのアクセス権は渡らない
+- [新機能] **会話の共有リンクを組織単位で止められる**: 管理者が、ユーザーによる Copilot の会話・応答の共有リンク生成をブロックできる（`microsoft-copilot-manage-content-sharing`・`ms.date` 2026-09-15・掲載歴ゼロ）。共有は既定でオンで、対象は Microsoft Copilot アプリと M365 アプリの両方である。閲覧には AI Reader、変更には AI Admin ロールが要る。⚠️ 共有リンクの受け手に、会話で参照されたファイル・メール・チャット・会議へのアクセス権は渡らない
 - [セキュリティ] **ジェイルブレイク試行を監査ログから追える**: 管理者が、監査レコードのブール値 `JailbreakDetected` でプロンプトによる試行の有無を確認できる（`copilot-prompt-defense-in-depth`・`ms.date` 2026-09-10・掲載歴ゼロ）。サードパーティスキルのエグレス可視化、Web グラウンディング時のスパム・詐欺コンテンツのブロックも同ページに並ぶ
 - [仕様] **デスクトップアプリの配布経路が明文化された**: 管理者が、Windows / Mac 版 Copilot アプリを Intune・M365 Apps 経由の自動インストール・手動 `.exe` の3経路で配布できる（`deploy-microsoft-365-copilot-app`・`ms.date` 2026-09-18）。⚠️ Windows ストアへのアクセスを止めている組織向けに、M365 CDN から直接インストーラーを取得する経路が明記されている
 - [据え置き] **Release Notes の期日超過が続く**: M365 Copilot Release Notes に新バッチは追加されておらず、先頭の `## ` 見出しは August 25, 2026 のままである。隔週の期日 9/8（UTC）から13日、前バッチからは27日になる
-- [動向] **Purview 側は 571306 を書いていない**: `purview/whats-new` は 2026-09-16 で据え置きで、⚠️ 9/20 に取り上げたレガシー Teams リテンションの Teams 専用化（GA October CY2026）は Roadmap 項目だけが一次という状態が続く
-- [動向] **Partner Center の直近期限は 9/25**: 9月の告知は14件で据え置きで、Check Inventory API の退役が4日後に迫る。代替の Check Inventory by Resource Type API は `resourceType` パラメーターを必須にする（レスポンス契約は不変）。9/23 には Partnering for Success Together の第1回がある
+- [据え置き] **Purview 側は 571306 を書いていない**: `purview/whats-new` は 2026-09-16 で据え置きで、⚠️ 9/20 に取り上げたレガシー Teams リテンションの Teams 専用化（GA October CY2026）は Roadmap 項目だけが一次という状態が続く
+- [予定] **Partner Center の直近期限は 9/25**: 9月の告知は14件で据え置きで、Check Inventory API の退役が4日後に迫る。代替の Check Inventory by Resource Type API は `resourceType` パラメーターを必須にする（レスポンス契約は不変）。9/23 には Partnering for Success Together の第1回がある
   - https://learn.microsoft.com/en-us/partner-center/announcements/2026-september
 
 ### Google
@@ -137,8 +137,8 @@
 - [廃止] **廃止期限の一次が `deprecations` ページに確定した**: これまで changelog から読んでいた Gemini の廃止期限は、読むたびに拾うエントリが入れ替わっていた（09-19 に記録した `gemini-omni-flash-preview` の 9/30 停止が 09-20 の抽出に現れなかった）。専用ページで **9/30**（代替 `gemini-omni-1.1-flash`）と **10/5**（代替 `antigravity-preview-09-2026`）の2件を期日付きで確定した
   - https://ai.google.dev/gemini-api/docs/deprecations
 - [据え置き] **changelog 自体に新規はない**: 最上位は 9/17 の `antigravity-preview-09-2026` のままで4日連続である。旧 `antigravity-preview-05-2026` の停止に伴い、パラメータが snake_case → PascalCase、ファイル編集が全文書き換え → 行範囲置換へ変わる破壊的変更も不変である。Gemini 3.8 Flash の導入価格（入力 $0.75／出力 $3.75）は 12/31 までで、2027-01-01 から $1.50／$7.50 になる
-- [動向] **Workspace Updates に 9/18 より新しい投稿はない**: 9/18 の群は6本（週次リカップ／Gemini Notebook の新学期向け機能／Notebooks in Gemini の学校・組織向け提供／Workspace Studio のカスタムスターター／Gemini Notebook の Expert Intelligence／Google Meet ホーム画面の会議室情報）、9/16 の群は5本で、いずれも既報である。⚠️ 前日の記録が 9/17 付としていた3本を、本日の同一アーカイブは 9/18 の群に入れて返した
-- [動向] **`blog.google` は日付判定に使えない状態が続く**: `curl` は 301 でゲートウェイを通過するが、WebFetch の応答に日付が出ないため差分判定ができない
+- [据え置き] **Workspace Updates に 9/18 より新しい投稿はない**: 9/18 の群は6本（週次リカップ／Gemini Notebook の新学期向け機能／Notebooks in Gemini の学校・組織向け提供／Workspace Studio のカスタムスターター／Gemini Notebook の Expert Intelligence／Google Meet ホーム画面の会議室情報）、9/16 の群は5本で、いずれも既報である。⚠️ 前日の記録が 9/17 付としていた3本を、本日の同一アーカイブは 9/18 の群に入れて返した
+- [観測] **`blog.google` は日付判定に使えない状態が続く**: `curl` は 301 でゲートウェイを通過するが、WebFetch の応答に日付が出ないため差分判定ができない
 
 ### Cursor / xAI / Devin / オープンウェイト
 
@@ -156,12 +156,12 @@
 ### 企業構造 / GTM
 
 - [新機能] **広告事業が「面」から「エージェント」へ移った**（ハイライト3参照）。HubSpot の CRM パートナー参加と Shopify コネクターの開放は、広告在庫の販売ではなく加盟店の在庫データを会話に持ち込む経路の整備にあたる
-- [新機能] **Accenture 組込み評価に追加の評価者発表はない**: Anthropic は「追加の評価者を数週間内に発表予定」としており、METR ほかの非営利評価者とは各団体自身の資金で一部を試行する協議が並行している
+- [据え置き] **Accenture 組込み評価に追加の評価者発表はない**: Anthropic は「追加の評価者を数週間内に発表予定」としており、METR ほかの非営利評価者とは各団体自身の資金で一部を試行する協議が並行している
 - [観測] **一次未読の大型案件が2件残る**: Google による Claude Opus 5 の全エンジニア開放（9/15・Business Insider 発）には一次の追認がなく、Anthropic のコンピュート契約 $517B・14.8GW（The Information 発）も一次未読のままである。⚠️ **$517B は確定支出ではなく11ヶ月で結んだ契約の上限枠**で、オプション・LOI・フレームワーク合意を含む
 
 ### 市場データ
 
-- [動向] **引用可能値は 09-20 から変わっていない**: IDC / MM総研 / NRC / Similarweb のいずれにも新規公表がない。Similarweb 8月分は ChatGPT 55.5%・Gemini 25.6%・Claude 9.3%、IDC 国内 AI 支出は 2025年 2兆3,725億円 → 2029年 6兆8,897億円（CAGR 36.0%）、Gartner 世界 AI 支出は 2026年 $2.59兆（+47%）、MM総研 国内生成AI個人利用率は 21.8% である
+- [据え置き] **引用可能値は 09-20 から変わっていない**: IDC / MM総研 / NRC / Similarweb のいずれにも新規公表がない。Similarweb 8月分は ChatGPT 55.5%・Gemini 25.6%・Claude 9.3%、IDC 国内 AI 支出は 2025年 2兆3,725億円 → 2029年 6兆8,897億円（CAGR 36.0%）、Gartner 世界 AI 支出は 2026年 $2.59兆（+47%）、MM総研 国内生成AI個人利用率は 21.8% である
   - IDC の「2026年 国内AIインフラおよびAI向けITインフラサービス市場動向分析」は検索面に出るが、`www.idc.com` / `my.idc.com` のゲートウェイ拒否で公表日を特定できず5日連続で不採録である
 
 ### Apple / クラウド
