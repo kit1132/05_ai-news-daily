@@ -44,6 +44,10 @@ HL_RE = re.compile(r"^### (\d+)\. \[([^\]]+)\] .+ — .+")
 DAILY_CAT_RE = re.compile(r"^- \[([^\]]+)\] \*\*[^*]+\*\* — ")
 DIGEST_CAT_RE = re.compile(r"^- \[([^\]]+)\] ")
 URL_ONLY_RE = re.compile(r"^- https?://\S+\s*$")
+# ビューアと daily-summary.md は「（ハイライトN参照）」を読む。
+# 「ハイライト参照」の連続一致だと N が入った行を検査対象にしてしまい、
+# タグ無しの参照行が不合格になる。
+HL_REF_RE = re.compile(r"ハイライト\s*[#＃]?\s*[0-9０-９]*\s*参照")
 
 
 def published_date(path: Path) -> date | None:
@@ -97,7 +101,7 @@ def section_spans(lines: list[str]) -> list[tuple[str, int, int]]:
 def skip_bullet(line: str) -> bool:
     if URL_ONLY_RE.match(line):
         return True
-    if "ハイライト参照" in line:
+    if HL_REF_RE.search(line):
         return True
     if line.startswith("- 直近の期限"):
         return True
@@ -243,7 +247,51 @@ def ci_targets(since: str) -> list[Path]:
     return news_paths(names)
 
 
+def self_test() -> int:
+    daily = """# AI News Daily Summary — 2026-09-27
+
+## 今日のハイライト
+
+### 1. [破壊的変更] Claude Code auto mode — 前提が外れた
+
+**要点**: x
+
+## カテゴリ別まとめ
+
+### Claude / Anthropic
+
+- **Claude Code の auto mode**（ハイライト1参照）
+- **国防総省指定の控訴審**（ハイライト参照）
+- **Sponsored Agents**（ハイライト #3 参照）
+- [新機能] **Build plugins** — ポータルを載せた。
+"""
+    digest = """# AI ニュースダイジェスト 2026-09-27
+
+## Claude Code / Claude Developer Platform
+
+- **Claude Code `2.1.283`**（ハイライト1参照）
+- [新機能] **運用系の出力** ゲートウェイを拡張した
+"""
+    errors = check_text(daily, "daily") + check_text(digest, "digest")
+    if errors:
+        print("self-test 不合格:", file=sys.stderr)
+        for error in errors:
+            print(f"  {error}", file=sys.stderr)
+        return 1
+    missing = [
+        "- **見出し** — タグも参照もない本文。",
+    ]
+    missing_md = daily.replace("- [新機能] **Build plugins** — ポータルを載せた。", missing[0])
+    if not check_text(missing_md, "daily"):
+        print("self-test 不合格: タグ無しカテゴリ行を見逃した", file=sys.stderr)
+        return 1
+    print("self-test 合格")
+    return 0
+
+
 def main(argv: list[str]) -> int:
+    if "--self-test" in argv:
+        return self_test()
     if "--hook" in argv:
         return run_hook()
     if "--since" in argv:
