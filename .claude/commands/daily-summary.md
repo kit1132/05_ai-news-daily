@@ -22,6 +22,20 @@ kit1132 の3つのソースリポジトリの当日ダイジェストを統合�
 
 ※ 2026-07-26 修正: 旧記載は「前日 19:10 / 20:05 / 21:05 頃」だったが、git のコミット時刻を実測した結果すべて誤りだった（実際は当日 04:13 / 05:10 / 06:10、直近7日で確認）。この表は生成エージェントが「欠損か未生成か」を判断する根拠になるため、時刻がズレると誤った欠損リカバリを走らせる。
 
+## 入力の取得経路（2026-10-20 追加）
+
+3ソースは **必ず `raw.githubusercontent.com` から読む。GitHub MCP は使わない。** ルーチンの GitHub MCP の対象が `05_ai-news-daily` だけだと入力3リポを読めず、空振りして当日分が出なかった（2026-09-03〜09-08 に実際に起きた）。
+
+```
+https://raw.githubusercontent.com/kit1132/01_ai-news-Master/main/digests/<YYYY>/<MM>/ai-news-<DATE>.md
+https://raw.githubusercontent.com/kit1132/03_ai-news-industry/main/digests/<YYYY>/<MM>/ai-news-<DATE>.md
+https://raw.githubusercontent.com/kit1132/02_ai-news-Copilot/main/digests/<YYYY>/<MM>/ai-news-<DATE>.md
+```
+
+- 404 はそのソースの当日分が未生成という意味である（上の表の時刻と照らして、欠損か未生成かを判断する）
+- 前日分を読むとき（欠損リカバリ）も同じ形式の URL を使う
+- ローカルのセーフティネット（`ai-news-digest-safety-net`・毎朝 8:30 JST ごろ）も、当日分が無ければこの経路でバックフィルする
+
 ## 手順
 
 1. ブランチを main に揃える:
