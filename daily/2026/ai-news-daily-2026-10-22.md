@@ -117,7 +117,7 @@ Anthropic は Claude API に3年ぶりの新バージョン `2026-10-21` を出�
 
 ### その他エージェント / 開発ツール
 
-- [新機能+料金] **Inception の拡散型 LLM Mercury 3** — The Decoder によると、Inception が 10/21 に、入力 $0.20・出力 $0.70（100万トークンあたり、公開時は半額で終了日未定）の Mercury 3 を公開した。同社の測定では毎秒約1,068トークンで Claude Haiku 5.5 や GPT-6 Luna より速いとするが、独立した検証はまだ無い。OpenRouter・Baseten・Vercel から使える。https://the-decoder.com/inceptions-mercury-3-diffusion-model-claims-to-beat-gpt-6-luna-and-claude-haiku-5-5-at-a-fraction-of-the-wait/
+- [料金+新機能] **Inception の拡散型 LLM Mercury 3** — The Decoder によると、Inception が 10/21 に、入力 $0.20・出力 $0.70（100万トークンあたり、公開時は半額で終了日未定）の Mercury 3 を公開した。同社の測定では毎秒約1,068トークンで Claude Haiku 5.5 や GPT-6 Luna より速いとするが、独立した検証はまだ無い。OpenRouter・Baseten・Vercel から使える。https://the-decoder.com/inceptions-mercury-3-diffusion-model-claims-to-beat-gpt-6-luna-and-claude-haiku-5-5-at-a-fraction-of-the-wait/
 - [新機能] **Orca `v1.4.235` / `v1.4.237`** — Stably AI が 10/20・10/21 に Orca を更新し、ネイティブチャット（実験的）で Claude のターンを任意のメッセージまで巻き戻せるようにした。CLI に `orca speech openai-key` と `--surface` を加え、新しく作る Codex の `config.toml` を所有者だけが読める権限にした。https://github.com/stablyai/orca/releases
 - [新機能] **Perplexity Computer のローカル実行** — TestingCatalog（10/21）によると、Perplexity が Mac 上のファイルとアプリ操作を端末内で完結させるローカル実行を出した。Qwen 3.6 か PPLX Pro を使い、クラウド利用は任意である。https://www.testingcatalog.com/perplexity-computer-now-runs-fully-locally-on-mac/
 - [観測] **xAI Grok 4.7 の単価** — industry が xAI のモデル一覧ページで、Grok 4.7 の単価を 200k トークン未満で入力 $2・出力 $6、200k 以上で $4・$12 と一次確認した。9/23 に二次情報から記録した長文時 $4.40・$13.20 とは一致しない。https://docs.x.ai/developers/models
@@ -174,6 +174,6 @@ Anthropic は Claude API に3年ぶりの新バージョン `2026-10-21` を出�
   - Google Cloud の OpenAI モデル提供は Master が `[新機能]`、industry が `[新機能+動向]` で割れた。private preview で申し込めば使えるため `[新機能]` を採った
   - Claude Code `2.1.305` は industry が「changelog に日付は出ていない」とし、Master は 10/20 としていた。Master の記述を採った
   - OpenAI のミスアライメント報告は Master が 10/20、industry が 10/21 の公表とした。一次の First posted を確認できていないため、本サマリーは日付を書かなかった
-  - Mercury 3 は industry が `[新機能]` としたが、新モデルの導入価格（公開時半額）を含むため `[新機能+料金]` にした
+  - Mercury 3 は industry が `[新機能]` としたが、新モデルの導入価格（公開時半額）を含むため `[料金+新機能]` にした（副は主より下位のため料金を主にした）
   - Customer Conversation ハーネスは Copilot がハイライト1にしたが、プレビューで kit の既存試算が当日から壊れるものではないため、本サマリーはカテゴリに置いた
   - ChatGPT Pro 200 の 10/30 の枠変更は、Master が「半減（二次）」、industry が「Plus 比10倍」と書いており、二次情報のまま割れている
