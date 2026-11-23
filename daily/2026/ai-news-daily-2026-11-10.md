@@ -19,7 +19,7 @@ Anthropic が 11/9 に Claude Fable 5.2 / Mythos 5.2 を出し、最上位モデ
 - 5.1 から API で乗り換えると壊れる4点:
   - prefix check: system・tools・過去のメッセージを書き換えて thinking block を送り返すと、アカウントの作成日を問わず 400 になる
   - thinking block: 5.2 の block は 5.2 と Mythos 5.2 しか読まない。他のモデルへ戻すとその分の推論は落とされる（リクエストは成功する）
-  - computer use: `computer_20251124` を宣言すると 400 になる。`computer_toolset_20260801` へ移す
+  - computer use: `computer_20251124` を宣言すると、Amazon Bedrock 以外では 400 になる（Bedrock では旧ツールも受け付ける）。`computer_toolset_20260801` へ移す
   - advisor tool（beta）: 5.2 の executor は 5.2 か Mythos 5.2 の advisor しか受けない
 - Claude Code・claude.ai・Managed Agents・Agent SDK が組むリクエストは影響を受けない
 - データ保持: 2モデルとも30日保持の Covered Models で、ZDR では使えない（Anthropic が明示に認めた場合を除く）
@@ -118,7 +118,7 @@ Anthropic が 11/9 に Claude Fable 5.2 / Mythos 5.2 を出し、最上位モデ
   - https://the-decoder.com/google-ships-four-tpu-variants-in-one-year-as-it-ramps-up-competition-with-nvidia/
 - [新機能] **Agent Substrate と gVisor の CNCF 寄贈** — Google がエージェント実行基盤 Agent Substrate と gVisor を CNCF に寄贈し、GKE 版の正式提供を始めたと Publickey（11/10）が報じた。Agent Substrate はアイドル中のエージェントをスナップショットに退避し、Google は従来比10倍の密度で動かせると主張しているが、独立した検証はない（industry）
   - https://www.publickey1.jp/blog/26/googlekubernetes10aiagent_sustrategvisorcncf.html
-- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` は本日も `aistudio.google.com` への 301 で、転送先はゲートウェイ拒否だった。11/17 の Live / TTS preview 停止と 12/1 の Argon 値上げは一次で再確認できていない（Master・industry）
+- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` は本日も `aistudio.google.com` への 301 で、転送先はゲートウェイ拒否だった。Live / TTS preview の停止日と 12/1 の Argon 値上げは一次で再確認できていない（Master・industry）。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - [据え置き] **Google の他ソース** — Workspace Updates、The Keyword の AI RSS（11/5 Gemini Omni 1.2 Flash）、Gemini アプリの release notes（2026.10.13）に新しい項目はない（Master）
   - https://blog.google/technology/ai/
 
@@ -148,7 +148,7 @@ Anthropic が 11/9 に Claude Fable 5.2 / Mythos 5.2 を出し、最上位モデ
 - **11/13**: Excel と Cowork の会計機能が GA（MC1536053）
 - **11/15**: Dataverse for Teams 環境とアンマネージド開発者環境の新規作成が停止 ／ Copilot Studio のカスタム採点器ライブラリが GA
 - **11/16**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了 ／ Cowork / Autopilot の Engage プラグインが GA
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種。一次未再確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行
 - **11/17〜20**: Microsoft Ignite
 - **11/18**: MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/20**: Copilot Studio のコスト管理を M365 管理センターへ移す機能が GA（MC1530368） ／ Conductor のクラウド版が終了（二次）
@@ -173,6 +173,6 @@ Anthropic が 11/9 に Claude Fable 5.2 / Mythos 5.2 を出し、最上位モデ
 
 - 3ソースとも新規提案・障害の変化なし。継続提案は Master 7件（最多 B-036、12回目）、Copilot 5件（最多 B-080、15回目）、industry 7件（最多 B-040、16回）
 - Master は Fable 5.2 を B-086（Platform release notes RSS）と B-087（Privacy Center の `dateModified`）の経路で検出でき、両提案の実例として台帳に記録した
-- ソース間の差異: Fable 5.2 の提供先を Master は「Claude Platform on AWS」、industry は「Bedrock」を含めて書き、`computer_20251124` の 400 も industry は「Bedrock 以外」と限定している。本サマリーは Master の記載に寄せ、Bedrock の扱いは一次で再確認が要る
-- ソース間の差異: Gemini API の 11/17 停止モデル数を Master は「4モデル（5本目は未確定）」、industry は「5種」と書いている。一次に届かないため本サマリーは「4〜5種」とした
+- ソース間の差異: Fable 5.2 の提供先を Master は「Claude Platform on AWS」、industry は「Bedrock」を含めて書き、`computer_20251124` の 400 も industry は「Bedrock 以外」と限定している。what's new ページでは 400 になるのは Bedrock 以外で、industry の記載が正しい（11/23 確認）
+- ソース間の差異: Gemini API の 11/17 停止モデル数を Master は「4モデル（5本目は未確定）」、industry は「5種」と書いている。一次に届かないため本サマリーは「4〜5種」とした。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 前日（11/9）分に欠損ソースはなく、欠損リカバリは不要

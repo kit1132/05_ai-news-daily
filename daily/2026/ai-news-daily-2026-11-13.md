@@ -117,7 +117,7 @@ M365 Copilot の予約実行は Copilot 自身の仕組みに移り、Power Plat
   - https://www.publickey1.jp/blog/26/google_antigravityaiai.html
 - [新機能] **Sheets canvas の単独リンク公開** — Google が 11/11、Gemini で表計算のデータから作る Sheets canvas を単独のリンクとして公開できるようにした（Master）
   - https://workspaceupdates.googleblog.com/
-- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/27 で、Hydrogen・Decisions API・Carbon の項目は確認できない。11/17 の Live / TTS preview 停止は11日続けて一次で確認できておらず、Gemini アプリの release notes は 2026.10.13 のまま（Master・industry）
+- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/27 で、Hydrogen・Decisions API・Carbon の項目は確認できない。Live / TTS preview の停止日は11日続けて一次で確認できておらず、Gemini アプリの release notes は 2026.10.13 のまま（Master・industry）。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 
 ### AWS / クラウド
 
@@ -152,7 +152,7 @@ M365 Copilot の予約実行は Copilot 自身の仕組みに移り、Power Plat
 - **11/15**: Dataverse for Teams 環境とアンマネージド開発者環境の新規作成が停止 ／ Copilot Studio のカスタム採点器ライブラリが GA
 - **11/16**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Claude Opus 4.6・Opus 4.5・Sonnet 4.5・Haiku 4.5 に透かしが入る ／ Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了 ／ Cowork / Autopilot の Engage プラグインが GA ／ PPAC のフィードバックフォームの既定ポリシーが GA
 - **11月中旬**: UBB の入口のアクセス要求の新しい管理設定が入る（MC1546354） ／ 単体の Word / Excel / PowerPoint エージェントの撤去が開始（MC1536062） ／ Copilot Chat のコンテンツソース絞り込みが展開（MC1548004） ／ Study and Learn 専用モードが開始（MC1548047）
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種。一次未確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行 ／ Sales Agent のセマンティックモデルが GA（MC1540293）
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行 ／ Sales Agent のセマンティックモデルが GA（MC1540293）
 - **11/17〜20**: Microsoft Ignite（11/17 基調講演）
 - **11/18**: Anthropic の IPO 価格決定（11/19 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオンになる

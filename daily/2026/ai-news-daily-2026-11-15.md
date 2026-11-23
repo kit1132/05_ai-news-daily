@@ -148,7 +148,7 @@ GitHub は 12/14 に Copilot から Claude Fable 5・Gemini 4 Argon など6モ�
 - **11/16**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Claude Opus 4.6・Opus 4.5・Sonnet 4.5・Haiku 4.5 に透かし ／ Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了 ／ Cowork / Autopilot の Engage プラグインが GA（MC1530609） ／ Workforce Intelligence プラグインが Frontier でプレビュー（MC1552389） ／ PPAC のフィードバックフォームの既定ポリシーが GA（MC1545686）
 - **11月中**: GitHub の cloud sandbox の課金が開始（日付は明記なし）
 - **11月中旬**: Copilot デスクトップアプリのタブ参照と、Chat からのモード切り替え提案（Standard）の展開が開始（MC1552386・MC1536065） ／ 単体の Word / Excel / PowerPoint エージェントの撤去が開始（MC1536062）
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種・一次未確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Claude for Manufacturing の技術ウェビナー
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Claude for Manufacturing の技術ウェビナー
 - **11/17〜20**: Microsoft Ignite
 - **11/18**: Anthropic の IPO 価格決定（11/19 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオン
@@ -184,7 +184,7 @@ GitHub は 12/14 に Copilot から Claude Fable 5・Gemini 4 Argon など6モ�
 ## 改善メモ
 
 - 3ソースとも新規提案・障害の変化なし。継続提案は Master 7件（最多 B-036・B-037、12回目。B-088 も12回目）、industry 7件（最多 B-040、17回目）。見送り候補は Master が B-078・B-043・B-036、industry が B-036
-- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため前日に続き「4〜5種」とした
+- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため前日に続き「4〜5種」とした。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 重複の統合: Copilot の 12/14 の6モデル廃止と Claude Code 2.1.325 は Master と industry の両方がハイライトにしていたため、それぞれ1件に寄せた。後継の書き方は Master、対象機能と Argon の値上げとの関係は industry から取った
 - Gemini 4 Hydrogen の Copilot GA は 11/14 分で既報のため、Master の本日収録分は短く残した
 - 前日（11/14）分に欠損ソースはなく、欠損リカバリは不要

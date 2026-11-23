@@ -143,7 +143,7 @@ Microsoft は EU / EFTA のテナントで 12/9 に Claude モデルを既定で
   - https://workspaceupdates.googleblog.com/
 - [動向] **The Keyword の発表** — Google が 11/10、Google Cloud の Gemini for healthcare と、Adobe のツールを Google のアプリに近づける提携を出した（Master）
   - https://blog.google/technology/ai/
-- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/27 の `gemini-api` CLI beta だった。11/17 の Live / TTS preview 停止は9日続けて一次で確認できていない（Master・industry）
+- [観測] **Gemini API の一次に届かない** — `ai.google.dev/gemini-api/docs/changelog` の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/27 の `gemini-api` CLI beta だった。Live / TTS preview の停止日は9日続けて一次で確認できていない（Master・industry）。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
   - https://ai.google.dev/gemini-api/docs/changelog
 
 ### Cursor / 開発ツール / エージェント
@@ -175,7 +175,7 @@ Microsoft は EU / EFTA のテナントで 12/9 に Claude モデルを既定で
 - **11/15**: Dataverse for Teams 環境とアンマネージド開発者環境の新規作成が停止 ／ Copilot Studio のカスタム採点器ライブラリが GA
 - **11/16**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了 ／ Cowork / Autopilot の Engage プラグインが GA ／ PPAC のフィードバックフォームの既定ポリシーが GA
 - **11月中旬**: UBB の入口のアクセス要求の新しい管理設定が入る（MC1546354）
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種。一次未確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューに移行
 - **11/17〜20**: Microsoft Ignite（11/17 基調講演）
 - **11/18**: Anthropic の IPO 価格決定（11/19 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオンになる

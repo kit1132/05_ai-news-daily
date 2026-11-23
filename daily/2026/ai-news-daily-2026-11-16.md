@@ -72,7 +72,7 @@ OpenAI が ChatGPT Enterprise を AWS Marketplace で売り始め、AWS のコ�
 
 - [新機能] **Antigravity の `/swarm`** — Google が Antigravity に、複数のエージェントを並列で動かす `/swarm` を加えた。名前付きのエージェントがタスクを分担して共有のメッセージボードで調整し、Google AI Pro・Ultra で App と CLI の両方から使える。ワーカーごとに別のエージェントとして動くため、クォータの消費は単一の会話より速い（TLDR AI 11/11号で検知・industry）
   - https://antigravity.google/docs/swarm/
-- [観測] **Gemini API の一次に届かない** — Gemini API changelog の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/26〜10/27 の項目である。11/17 停止予定の Live / TTS preview は deprecations 表のキャッシュでしか確かめられない。Gemini アプリ（2026.10.13）、Workspace Updates（11/13）、The Keyword（11/12）も動いていない（Master・industry）
+- [観測] **Gemini API の一次に届かない** — Gemini API changelog の転送先 `aistudio.google.com` に本日も届かず、検索で見える最新は 10/26〜10/27 の項目である。Live / TTS preview の停止日は deprecations 表のキャッシュでしか確かめられない（11/23 訂正: 一次では 11/17 に止まるモデルは無い）。Gemini アプリ（2026.10.13）、Workspace Updates（11/13）、The Keyword（11/12）も動いていない（Master・industry）
   - https://ai.google.dev/gemini-api/docs/deprecations
 
 ### GitHub Copilot / Microsoft 開発ツール
@@ -134,7 +134,7 @@ OpenAI が ChatGPT Enterprise を AWS Marketplace で売り始め、AWS のコ�
 - **11/16（本日）**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Claude Opus 4.6・Opus 4.5・Sonnet 4.5・Haiku 4.5 に透かし ／ **Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了** ／ Cowork / Autopilot の Engage プラグインが GA（MC1530609） ／ Workforce Intelligence プラグインが Frontier でプレビュー（MC1552389） ／ PPAC のフィードバックフォームの既定ポリシーが GA（MC1545686）
 - **11月中**: GitHub の cloud sandbox の課金が開始（日付は明記なし）
 - **11月中旬**: Copilot デスクトップアプリのタブ参照と、Chat からのモード切り替え提案（Standard）の展開が開始（MC1552386・MC1536065） ／ 単体の Word / Excel / PowerPoint エージェントの撤去が開始（MC1536062） ／ UBB の利用申請の設定が入る（MC1546354）
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種・一次未確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Claude for Manufacturing の技術ウェビナー
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Claude for Manufacturing の技術ウェビナー
 - **11/17〜20**: Microsoft Ignite
 - **11/18**: Anthropic の IPO 価格決定（11/19 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオン ／ PostgreSQL 19 のリリース予定
@@ -173,5 +173,5 @@ OpenAI が ChatGPT Enterprise を AWS Marketplace で売り始め、AWS のコ�
 - Master: 新規提案 B-089（Orca の要約 URL を `orca.dev/changelog` へ改め、許可ドメインに `orca.dev` を足す）。障害の変化として `www.onorca.dev` が 307 で `orca.dev` へ転送され、転送先がゲートウェイ拒否になった（新規）。継続提案7件（最多 B-036・B-037、12回目。B-088 は13回目）。週次復旧チェックは復旧0件・分類の変化0件
 - Copilot: B-082（週次突合の目次一覧の保存）に実例を追記（3回目）。computer use の6ページは前回の本文が無く差分を特定できなかった
 - industry: 新規提案・障害の変化なし。継続提案7件（最多 B-040、17回目）。見送り候補は B-036
-- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため引き続き「4〜5種」とした
+- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため引き続き「4〜5種」とした。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 前日（11/15）分に欠損ソースはなく、欠損リカバリは不要

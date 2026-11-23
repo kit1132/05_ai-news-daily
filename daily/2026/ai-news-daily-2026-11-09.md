@@ -1,20 +1,20 @@
 # AI News Daily Summary — 2026-11-09
 
-週末明けで各社の発表は少ない。Gemini API の Live / TTS preview 4モデルの 11/17 停止は、公式 deprecations ページの検索インデックスで裏づけられた。Microsoft は App Builder のアプリを Cowork へ移すワンクリック移行を 11/4 から順次展開し、Copilot の Claude モデルの一部（Anthropic models with Data Retention）では Microsoft の DPA が適用されないと Learn に明記した。
+週末明けで各社の発表は少ない。Gemini API の Live / TTS preview は 11/17 には止まらない（11/23 訂正。TTS preview 3種は 12/18 に止まる）。Microsoft は App Builder のアプリを Cowork へ移すワンクリック移行を 11/4 から順次展開し、Copilot の Claude モデルの一部（Anthropic models with Data Retention）では Microsoft の DPA が適用されないと Learn に明記した。
 
 ## 今日のハイライト
 
-### 1. [予定] Gemini API の Live / TTS preview 4モデルの 11/17 停止が公式ページの記載で裏づけられた — 二次ブログだけが報じていた期限が、残り8日の確定した期限になった
+### 1. [予定] Gemini API の音声系 preview は 11/17 には止まらない — TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31 に止まる（11/23 訂正）
 
-**要点**: 11/7 には二次ブログでしか確かめられなかった Gemini Live / TTS の preview モデル停止について、Google の Gemini API deprecations ページの検索インデックスに 11/17 停止の4モデルと移行先が載っていた。期限の根拠が二次から公式の記載に変わった。ページ本体は 301 の転送先に本日も届いていない。
+**要点**: 二次ブログと検索インデックスをもとに 11/17 停止としていたが、一次の Gemini API deprecations 表（11/23 に本文を確認）に 11/17 に止まるモデルは無い。TTS preview 3種は 12/18、`gemini-2.5-flash-native-audio-preview-12-2025` は 2027-03-31 に止まり、`gemini-3.1-flash-live-preview` は停止日が未発表である（11/23 訂正）。
 
-**詳細**（Master）:
-- 11/17 に停止する4モデルと移行先:
-  - `gemini-2.5-flash-preview-tts` / `gemini-2.5-pro-preview-tts` → `gemini-3.8-flash-tts` か `gemini-3.8-flash-lite-tts`
-  - `gemini-3.1-flash-live-preview` / `gemini-2.5-flash-native-audio-preview-12-2025` → `gemini-3.8-live`
-- ⚠️ 5本目の `gemini-3.1-flash-tts-preview` は、二次ブログが同日停止に含める一方、公式ページの古い版は「No shutdown date announced」で、一次では確定しない
-- Vertex AI は別の日付になる（例: `gemini-live-2.5-flash-native-audio` は 12/13）。11/17 は Gemini API 側の期限
-- 取得経路: `ai.google.dev/gemini-api/docs/deprecations` は 301 で `aistudio.google.com` へ移り、そのホストはゲートウェイ拒否。本文は WebSearch の結果からしか読めていない
+**詳細**（Master、11/23 訂正）:
+- 停止日と移行先（一次の deprecations 表）:
+  - `gemini-2.5-flash-preview-tts` / `gemini-2.5-pro-preview-tts` / `gemini-3.1-flash-tts-preview` → 12/18 に停止。移行先は `gemini-3.8-flash-tts` か `gemini-3.8-flash-lite-tts`
+  - `gemini-2.5-flash-native-audio-preview-12-2025` → 2027-03-31 に停止。移行先は `gemini-3.8-live`
+  - `gemini-3.1-flash-live-preview` → 停止日は未発表。移行先は `gemini-3.8-live`
+- Vertex AI は別の日付になる（例: `gemini-live-2.5-flash-native-audio` は 12/13）
+- 取得経路: 11/9 時点では `ai.google.dev/gemini-api/docs/deprecations` の 301 の転送先 `aistudio.google.com` に届かず、WebSearch の結果からしか読めていなかった
 
 - https://ai.google.dev/gemini-api/docs/deprecations
 - https://www.developersdigest.tech/blog/gemini-live-tts-retirement-november-2026
@@ -98,7 +98,7 @@
 
 ### Google
 
-- **Gemini Live / TTS preview モデルの 11/17 停止**（ハイライト1参照）
+- **Gemini の音声系 preview の停止日**（ハイライト1参照。11/23 訂正）
 - [据え置き] **Google の一次** — Workspace Updates の最上位は 11/6 の週次まとめ、The Keyword の AI RSS は 11/5 の Gemini Omni 1.2 Flash、Gemini アプリの release notes は 2026.10.13 のまま。Gemini API changelog は検索でも 10/27 の `gemini-api` CLI beta より新しい項目が見つからない（Master）
 
 ### Cursor / 開発ツール / エージェント
@@ -137,7 +137,7 @@
 - **11/13**: Excel と Cowork の会計機能が GA（MC1536053）
 - **11/15**: Dataverse for Teams 環境とアンマネージド開発者環境の新規作成が停止 ／ Copilot Studio のカスタム採点器ライブラリが GA（MC1531932）
 - **11/16**: GitHub Copilot が Claude Opus 4.8・Opus 5・GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Cowork / Autopilot の Engage プラグインが GA（MC1530609） ／ Claude Opus 4.6・Opus 4.5・Sonnet 4.5・Haiku 4.5 に透かしが入る
-- **11/17**: Gemini API の Live / TTS preview 4モデルが停止（5本目は未確定） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューへ移行（MC1537490） ／ Sales Agent のセマンティックモデルが GA（MC1540293）
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Intelligent call delegation が従量課金のパブリックプレビューへ移行（MC1537490） ／ Sales Agent のセマンティックモデルが GA（MC1540293）
 - **11月中旬**: 単体の Word / Excel / PowerPoint エージェントの撤去が開始（MC1536062） ／ Office in Copilot の展開が完了（MC1530611） ／ Learning Agent のプレイリスト（MC1537495） ／ Cowork の Power Platform コネクタの展開が完了（MC1542062）
 - **11/17〜20**: Microsoft Ignite
 - **11/18**: MODS の Workforce Insights エンドポイントが退役（MC1542066）
@@ -173,5 +173,5 @@
 - 新規提案: 3ソースとも新規起票なし
 - 継続提案: Master は継続7件（最多 B-036 DeepSeek 登録、12回目。B-088 Gemini API Changelog の URL 差し替えは6回目） ／ Copilot は継続5件（最多 B-080 Cowork の Learn URL 差し替え、14回目。B-084 は週次突合の目次 `microsoft-365/copilot/toc.json` が 404 で `copilot/toc.json` に移っていたことを追記） ／ industry は継続7件（最多 B-040 セキュリティ開示の定点、15回）
 - 障害の変化: industry で `pasqualepillitteri.it`・`www.investing.com` がゲートウェイ拒否（新規。WebSearch のスニペットで代替）。Master は月曜の週次復旧チェックで復旧0件・分類の変化0件
-- ソース間の食い違い: Gemini API の 11/17 停止について、Master は公式 deprecations ページの検索インデックスで4モデルを確認したが、industry は「7日連続で一次に届かず未確認・5種」と書いている。本サマリーは Master の記載（4モデル確定・5本目は未確定）を採った
+- ソース間の食い違い: Gemini API の 11/17 停止について、Master は公式 deprecations ページの検索インデックスで4モデルを確認したが、industry は「7日連続で一次に届かず未確認・5種」と書いている。本サマリーは Master の記載（4モデル確定・5本目は未確定）を採った。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 欠損リカバリ: 前日（11/8）分は3ソース揃っており、対象なし

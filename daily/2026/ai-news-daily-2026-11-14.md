@@ -153,7 +153,7 @@ SharePoint の一時認証 URL（tempauth）が 2027-04-01 に退役し、それ
 - **11/16**: Copilot から Claude Opus 4.8 / Opus 5 / GPT-5.6 Terra を廃止 ／ Teams の旧 GitHub アプリが退役 ／ `pull_request_target` の2回目の試験ブロック ／ Claude Opus 4.6・Opus 4.5・Sonnet 4.5・Haiku 4.5 に透かし ／ Fable 5.2 ローンチ特典の Pro・Team 標準席の枠が 23:59 PT に終了 ／ Cowork / Autopilot の Engage プラグインが GA（MC1530609）
 - **11月中**: GitHub の cloud sandbox の課金が開始（日付は明記なし）
 - **11月中旬**: 単体の Word / Excel / PowerPoint エージェントの撤去が開始（MC1536062） ／ Copilot Chat のコンテンツソース絞り込みが展開（MC1548004） ／ UBB の入口のアクセス要求の管理設定（MC1546354）
-- **11/17**: Gemini API の Live / TTS preview モデルが停止（4〜5種・一次未確認） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Sales Agent のセマンティックモデルが GA（MC1540293）
+- **11/17**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ Plugin Catalog が公開 ／ Intelligent call delegation が従量課金のパブリックプレビュー（MC1537490） ／ Sales Agent のセマンティックモデルが GA（MC1540293）
 - **11/17〜20**: Microsoft Ignite
 - **11/18**: Anthropic の IPO 価格決定（11/19 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイントが退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオン
@@ -190,7 +190,7 @@ SharePoint の一時認証 URL（tempauth）が 2027-04-01 に退役し、それ
 - 3ソースとも新規提案・障害の変化なし。継続提案は Master 7件（最多 B-036・B-037、12回目。B-088 は11回目）、industry 7件（最多 B-040、17回目）。見送り候補は Master が B-078・B-043・B-036、industry が B-036
 - ソース間の差異: ChatGPT Wallet を、industry は The Decoder を根拠に提供開始として収録し、Master は公式発表を確認できず未確認（観測）として扱った。本サマリーは industry のタグで収録し、未確認である旨を併記した
 - ソース間の差異: Claude Meetings について、industry は「料金の記載は無い」「対象外は HIPAA 構成と顧客管理の暗号化」とし、Master は一次記事からベータ中の料金と ZDR 組織の除外まで書いている。本サマリーは一次を読んだ Master をベースにした
-- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため「4〜5種」とした
+- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目は未確定）、industry は5種とする。どちらも一次未確認のため「4〜5種」とした。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 前日分の差異の解消: 11/13 分で割れていた Gemini 4 Hydrogen の API 提供と単価は、Master が Google の一次で確かめた
 - Claude for Manufacturing は industry が本日収録したが、11/13 分の本サマリーで既報のため再掲していない
 - 前日（11/13）分に欠損ソースはなく、欠損リカバリは不要
