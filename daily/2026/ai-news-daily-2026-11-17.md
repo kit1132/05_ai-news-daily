@@ -18,14 +18,16 @@ M365 Developer Program のレガシーサンドボックスが退役し、開発
 
 ### 2. [破壊的変更+動向] 米商務省が中国系企業へのクラウド経由の AI 計算提供を許可制にした — チップの出荷先だけを見ていた規制が、計算を貸す側の顧客審査に広がった
 
-**要点**: 米商務省 BIS が、中国などに本社や最終親会社がある企業へ一定規模を超える先端 AI 計算をデータセンター経由で提供する場合に許可を求める暫定最終規則を出した。データセンターの所在国は問わず、既存の提供も発効から90日以内に許可が要る。
+**要点**: 米商務省 BIS が、中国などに本社や最終親会社がある企業へ一定規模を超える先端 AI 計算をデータセンター経由で提供する場合に許可を求める暫定最終規則を出した。データセンターの所在国は問わず、既存の提供も発効から90日以内に許可が要る。公表は 11/16、Federal Register の掲載と発効は 11/19。
 
-**詳細**: 一次（BIS・Federal Register）には到達できず、TechCrunch・Bloomberg・Quartz の二次報道で突き合わせた（industry）。公表日は 11/15 と 11/16 で報道が割れている。
+**詳細**: 一次（BIS のプレスリリースと Federal Register）で確認した（industry）。
 - 対象: Macau と Country Group D:5（中国を含む）に本社または最終親会社がある企業へ、合計 1,200万 TPP を超える計算を提供すると知っている場合。資源を共有する複数のデータセンターは合算し、審査は個別判断
 - 5カ国: インドネシア・マレーシア・シンガポール・タイ・ブラジル向けの先端チップ輸出にも許可を求める。米国本社の企業は報告を条件に免除される
-- そのほか: バイデン政権の AI Diffusion Rule を正式に撤回した。発効は Federal Register 掲載時、意見募集は掲載後60日。掲載日は未確認
+- そのほか: バイデン政権の AI Diffusion Rule を正式に撤回した。意見募集は **2027-01-19** まで
 
 出典:
+- https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology
+- https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors
 - https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/
 - https://www.bloomberg.com/news/articles/2026-11-16/us-moves-to-limit-remote-access-to-advanced-ai-chips
 - https://qz.com/us-ai-chip-reexport-licenses-five-countries-111626
