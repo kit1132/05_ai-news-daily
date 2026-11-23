@@ -1,6 +1,6 @@
 # AI News Daily Summary — 2026-11-22
 
-Claude Code 2.1.330 は `deniedMcpServers` の名前指定を1コネクタだけに狭め、Enterprise Admin Console の組織へのサインインを足した。npm の `stable` は 2.1.311 から 2.1.323 に進み、stable に固定した組織にもプロキシとサンドボックスの変更が届く。GPT-6.2 へ移るには `temperature`・`top_p` を外す必要がある。Microsoft は Copilot デスクトップアプリと Edge の同期を12月中旬に始める。
+Claude Code 2.1.330 は `deniedMcpServers` の名前指定を1コネクタだけに狭め、Enterprise Admin Console の組織へのサインインを足した。npm の `stable` は 2.1.311 から 2.1.323 に進み、stable に固定した組織にもプロキシとサンドボックスの変更が届く。Microsoft は Copilot デスクトップアプリと Edge の同期を12月中旬に始める。
 
 ## 今日のハイライト
 
@@ -38,21 +38,6 @@ Claude Code 2.1.330 は `deniedMcpServers` の名前指定を1コネクタだけ
 - https://registry.npmjs.org/@anthropic-ai/claude-code
 - https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md
 
-### 3. [破壊的変更] GPT-6.2 への移行では `temperature`・`top_p` を外す必要がある — モデル名を差し替えるだけでは既存のリクエストは動かない
-
-**要点**: OpenAI の GPT-6.2 移行ガイドによると、Astra・Sol は `temperature`・`top_p`・`top_logprobs` を受け付けない。推論の強さ `none`・`minimal` も `low` に置き換える。11/17 の changelog は移行ガイドを示しただけで、外すパラメーターの一覧は今日はじめて確認した。
-
-**詳細**: 一次（developers.openai.com の最新モデルガイド）で確認した（industry）。
-- 外すパラメーター: Chat Completions では `temperature`・`top_p`・`logprobs`・`top_logprobs`、Responses では `temperature`・`top_p`・`top_logprobs`。`include` から `message.output_text.logprobs` も除く
-- 推論の強さ: 新しく組むなら `medium` から始める
-- ツール呼び出し: Chat Completions も使えるが、ツール呼び出しは Responses API だけで動く
-- プロンプトキャッシュ: 最上位の `instructions` の固定指示を `input` 先頭の developer メッセージに移すとキャッシュの対象になる
-- プロンプト: Astra は既定で簡潔に答えるので「簡潔に」の指示は外す。The Decoder（11/21）が同じガイドのプロンプト指針を報じている
-
-出典:
-- https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra
-- https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/
-
 ## カテゴリ別まとめ
 
 ### Anthropic / Claude
@@ -64,7 +49,9 @@ Claude Code 2.1.330 は `deniedMcpServers` の名前指定を1コネクタだけ
 
 ### OpenAI / Codex / ChatGPT
 
-- **GPT-6.2 の移行パラメーター**（ハイライト3参照）
+- [仕様] **GPT-6.2 の移行パラメーター** — 11/18 既報。新しいのはプロンプトの指針だけ。Astra は既定で簡潔に答えるので「簡潔に」の指示は外す。新しく組むなら推論の強さは `medium` から始める。最上位の `instructions` の固定指示を `input` 先頭の developer メッセージに移すとキャッシュの対象になる。The Decoder（11/21）が同じガイドのプロンプト指針を報じている（industry）
+  - https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra
+  - https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/
 - [破壊的変更] **AI ゲートウェイとモデルルーターの事前審査** — OpenAI の改定 Usage Policies が 11/20 に発効し、第三者に OpenAI モデルへの直接アクセスを提供するサービスは、提供前に OpenAI の審査と承認が要るようになった（10/21 公表、これまで未掲載）。`openai.com` はオリジン403で条文は一次未読で、ポリシーページの「Effective: November 20, 2026」と二次報道で確認した（Master）
   - https://openai.com/policies/usage-policies/
   - https://www.eweek.com/news/openai-ai-gateway-approval-rules/
