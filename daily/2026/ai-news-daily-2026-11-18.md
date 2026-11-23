@@ -60,7 +60,7 @@ Ignite 初日に GitHub が VS Code の Copilot の Local harness を2027年2月
 - [破壊的変更+セキュリティ] **Claude Code `2.1.326`** — Anthropic が Claude Code `2.1.326` を changelog に載せ、npm の `latest` にした。組織ポリシーを読み込む前のターミナル / VS Code セッションは、モードの指定がなければ Manual ではなく auto mode で始まる。HIPAA 構成（Claude Code + Cowork）の組織も auto が既定になり、`disableAutoMode` で止められる。設定もポリシーも取れなければ Manual に落ちる（Master・industry）
   - サンドボックス: macOS / Linux / WSL でホーム配下の機密フォルダに書けなくなり（`sandbox.filesystem.allowWrite` で許可）、`.credentials.json` などの認証ファイルへの書き込みを拒否する
   - フック: `"decision": "block"` が効く場面が増え、常に block を返すフックは呼び出しを止め始めることがある。bypass permissions でも一部の呼び出しは承認を求める
-  - 管理設定: `autoMode.environment` に `"$defaults"` を入れないと、Claude Desktop と Agent SDK でも組み込みの項目がすべて置き換わる。`OTEL_RESOURCE_INCLUDE_HOST`（既定オフ）も加わった。全体は Added 10・Fixed 217・Changed 57・Removed 2 件
+  - 管理設定: `autoMode.environment` に `"$defaults"` を入れないと、Claude Desktop と Agent SDK でも組み込みの項目がすべて置き換わる。`OTEL_RESOURCE_INCLUDE_HOST`（既定オフ）も加わった。全体は Added 11・Fixed 233・Changed 62・Removed 2 件
   - npm: `stable` は `2.1.311` のまま
   - https://code.claude.com/docs/en/changelog
 - [新機能] **Linked billing（ベータ）** — Anthropic が Claude Platform で Linked billing をベータで出した（11/17）。顧客が自分の Claude 組織をアプリにつなぐと、アプリ開発者は `/v1/messages` などのリクエストごとに `billing_policy` で支払う側を選べる。顧客は Console でアプリの支出上限の設定と連携の解除ができる。対象は API 利用を Anthropic に直接支払う組織で、ベータヘッダーは `user-profiles-billing-2026-10-01`（Master・industry）
