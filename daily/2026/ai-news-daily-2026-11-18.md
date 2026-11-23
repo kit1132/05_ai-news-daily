@@ -167,7 +167,7 @@ Ignite 初日に GitHub が VS Code の Copilot の Local harness を2027年2月
   - https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/
 - [新機能] **Gemini アプリのスキル共有** — 利用者が Gemini アプリのスキルを閲覧 / 編集の権限つきで他人に共有でき、Drive・Gemini Notebook・Google フォトのファイルを添付できるようになった（11/16）（Master）
   - http://workspaceupdates.googleblog.com/2026/11/share-skills-add-files-from-Drive-Notebook-Photos-to-skills-Gemini-app.html
-- [観測] **Gemini API の Live / TTS preview 停止** — 11/17 に停止予定だった preview が止まったかは、Gemini API changelog の転送先 `aistudio.google.com` に届かず、WebSearch でも 10/27 より新しい項目が出ないため一次で確かめられない（Master・industry）
+- [観測] **Gemini API の Live / TTS preview 停止** — 11/17 に停止予定だった preview が止まったかは、Gemini API changelog の転送先 `aistudio.google.com` に届かず、WebSearch でも 10/27 より新しい項目が出ないため一次で確かめられない（Master・industry）。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
   - https://ai.google.dev/gemini-api/docs/deprecations
 
 ### Cursor / Devin / その他エージェント

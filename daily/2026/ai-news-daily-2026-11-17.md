@@ -101,7 +101,7 @@ M365 Developer Program のレガシーサンドボックスが退役し、開発
   - http://workspaceupdates.googleblog.com/2026/11/customize-and-extend-workspace-with-apps-script.html
 - [セキュリティ] **AI エージェントによる自動攻撃の観測** — Google の脅威インテリジェンス部門 GTIG が 11/16 の AI Threat Tracker で、露出したサーバー上に、複数の LLM に接続してパッチ前後の差分から脆弱性を特定し攻撃コードを自動実行する `exploit_agent` を見つけたと報告した。標的はフランスのメディア・教育などのサイトだった（industry）
   - https://the-decoder.com/google-warns-that-fully-automated-cyberattacks-have-arrived-and-will-get-worse-fast/
-- [観測] **Gemini API の Live / TTS preview 停止** — 本日停止予定の preview が実際に止まったかは、Gemini API changelog の転送先 `aistudio.google.com` に届かず一次で確かめられない。停止対象を Master は4モデル（5本目は未確定）、industry は5種としている（Master・industry）
+- [観測] **Gemini API の Live / TTS preview 停止** — 本日停止予定の preview が実際に止まったかは、Gemini API changelog の転送先 `aistudio.google.com` に届かず一次で確かめられない。停止対象を Master は4モデル（5本目は未確定）、industry は5種としている（Master・industry）。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
   - https://ai.google.dev/gemini-api/docs/deprecations
 
 ### Cursor / Orca / その他エージェント
@@ -125,7 +125,7 @@ M365 Developer Program のレガシーサンドボックスが退役し、開発
 
 ## 直近の注目予定
 
-- **11/17（本日）**: Gemini API の Live / TTS preview（4〜5種・一次未確認）が停止 ／ Gems が Gemini アプリの設定パネルへ移動 ／ M365 の Plugin Catalog 公開、Intelligent call delegation が従量課金のパブリックプレビューへ（MC1537490） ／ Microsoft Ignite（〜11/20）
+- **11/17（本日）**: Gemini API の Live / TTS preview はこの日には止まらない（11/23 訂正: TTS preview 3種は 12/18、ネイティブ音声 preview は 2027-03-31、Live preview は停止日未発表） ／ Gems が Gemini アプリの設定パネルへ移動 ／ M365 の Plugin Catalog 公開、Intelligent call delegation が従量課金のパブリックプレビューへ（MC1537490） ／ Microsoft Ignite（〜11/20）
 - **11/18**: Anthropic の IPO 価格決定（11/19 Nasdaq 取引開始の見込み・報道） ／ MODS の Workforce Insights エンドポイント退役（MC1542066）
 - **11/19**: Claude Enterprise で Claude Data が既定でオン
 - **11/20**: Conductor のクラウド版が終了（二次） ／ Copilot Studio のコスト管理を M365 管理センターへ移す機能が GA（MC1530368）
@@ -166,5 +166,5 @@ M365 Developer Program のレガシーサンドボックスが退役し、開発
 - Copilot: 新規提案・障害の変化なし
 - industry: 障害の変化として Databricks（`www.databricks.com`）がゲートウェイ拒否（新規。Databricks AI Index の本文に届かず）。継続提案7件（最多 B-040、17回目）。見送り候補は B-036
 - ソース間の差異: Anthropic Platform の release notes を、Master は「11/12 から動いていない」、industry は「11/16 付で旧モデル出力の透かしを記載」としており食い違う。本サマリーは具体的な記載を挙げた industry を採り、両論を併記した
-- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目未確定）、industry は5種とする。どちらも一次未確認のため引き続き「4〜5種」とした
+- ソース間の差異: 11/17 に停止する Gemini API の Live / TTS preview を、Master は4モデル（5本目未確定）、industry は5種とする。どちらも一次未確認のため引き続き「4〜5種」とした。11/23 訂正: 一次の deprecations 表では 11/17 に止まるモデルは無い
 - 前日（11/16）分に欠損ソースはなく、欠損リカバリは不要
